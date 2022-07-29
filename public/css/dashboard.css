@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Prompt',sans-serif;
+}
+
+.dh{
+    background-color: #E6EDF6;
+    color: #5069F8 !important;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+.dashboardtext{
+    font-size: var(--fs4);
+    color: var(--bgcolor3);
+    padding: 1rem;
+    font-family: 'Prompt',sans-serif;
+    font-weight: bold;
+}
+
+.cart1{
+    width: 390px;
+    height: 230px;
+    background-image: url(../image/Frame\ 1.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-radius: 10px;
+}
+
+
+.cart2{
+    width: 390px;
+    height: 230px;
+    background-image: url(../image/Frame\ 2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-radius: 10px;
+}
+
+.cart3{
+    width: 390px;
+    height: 230px;
+    background-image: url(../image/Frame\ 3.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    border-radius: 10px;
+}
+
+.title{
+    font-family: 'Prompt',sans-serif;
+    font-size: var(--fs1);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--text-color);
+    padding-top: 1rem;
+
+}
+
+.numblog{
+    width: 60px;
+    height: 30px;
+  
+    text-align: center;
+    background-color: var(--btn-color2);
+}
+
+.customer{
+    font-family: 'Prompt',sans-serif;
+    margin-top: 0.3rem;
+    font-size: 9px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+
+.total{
+    font-family: 'Prompt',sans-serif;
+    font-size: var(--fs1);
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+
+.income{
+    font-family: 'Prompt',sans-serif;
+    margin-top: 0.3rem;
+    font-size: 9px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.header-top{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.date-blog{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.greet{
+    font-size: var(--fs3);
+    font-weight: 600;
+    color: var(--text-color2);
+}
+
+
+.totalall{
+    min-width: 50%;
+}
+
+.amount{
+    font-size: var(--fs5);
+    color: var(--text-color3);
+    font-weight: 400;
+}
+
+.all-amounts{
+    font-size: var(--fs6);
+    color: var(--text-color2);
+    font-weight: bold;
+}
+
+th{
+    color: var(--text-color2);
+    border-top: 0.5px solid var(--text-color3);
+}
+
+td{
+    color : var(--table-color);
+    border-bottom: dashed;
+    font-size: var(--fs3);
+    /* border-style: dotted; */
+}
+
+.blank_row
+{
+    height: 10px !important; 
+    background-color: #FFFFFF;
+    
+}
+
+.norow{
+    border-bottom: none;
+}
+
+.items{
+    color: var(--text-color3);
+    font-size: var(--fs3);
+}

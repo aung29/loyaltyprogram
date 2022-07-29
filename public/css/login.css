@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.logins{
+    min-width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background-color: var(--bgcolor);
+}
+
+.blogs{
+    /* text-align: center; */
+}
+
+.imageblog{
+    width: 39% !important;
+    height: 39% !important;
+    margin :auto;
+    text-align: center;
+    
+}
+.title{
+    text-align: center;
+}
+.titles{
+    font-size: var(--fs1);
+    font-weight: bold;
+    font-family: 'Prompt', sans-serif;
+}
+
+
+.images{
+    border-radius: 50%;
+    width: 90%;
+    height: 90%;
+}
+.form-containers{
+    margin-top: 2rem;
+    padding: 1rem;
+    width: 400px;
+    height: 440px;
+    border-radius: 20px;
+    background-color: var(--bgcolor2); 
+}
+
+label{
+    margin: auto;
+    font-weight: 400;
+    text-align: center;
+}
+.inputs{
+    
+    width: 280px !important;
+      
+}
+.inputs:focus{
+    outline: none !important;
+    border: none !important;
+    border-color: none;
+}
+
+.btns{
+    width: 160px;
+    height: 30px;
+    text-align: center;
+    margin-left: 7rem;
+    border:none;
+    background-color: var(--btn-color);
+    color: var(--text-color);
+}
+.main-image{
+    width: 100%;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+
+.sub-image{
+     width: 100%;
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+     align-items: center;
+}
+
+.sub1{
+    width: 25%;
+    height: 30%;
+    margin : 0 1rem ;
+}
+
+.subimages{
+    width: 70%;
+    height: 80%;
+    /* border : 2px solid white; */
+    border-radius: 50%;
+
+}
+
+
+.subimage1,.subimage2{
+    width: 70%;
+    height: 80%;
+
+}

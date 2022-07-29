@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Prompt:wght@300&display=swap');
+
+:root{
+
+    --bgcolor : black;
+    --bgcolor2 : #F9FAFB;
+    --bgcolor3 : #5069F8;
+    --bgcolor4 : rgba(127, 145, 244, 1);
+    --fs1 : 20px;
+    --fs2 : 18px;
+    --fs3 : 16px;
+    --fs4 : 26px;
+    --fs5 : 12px;
+    --fs6 : 14px;
+    --fs7 : 32px;
+    --btn-color : #F6BC25;
+    --btn-color2 : #9B9B9B;
+
+
+    --border-btm-color: rgba(0, 0, 0, 0.17);
+
+    --table-color : #767676;
+    --table-color2 : #F6F8FA;
+
+    --table-text-color : rgba(166, 177, 241, 1);
+    --table-text-color2 : #767676;;
+    --text-color : #ffffff;
+    --text-color2 : #5069F8;
+    --text-color3 : #9B9B9B;
+}

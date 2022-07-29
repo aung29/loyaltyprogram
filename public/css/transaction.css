@@ -1,0 +1,231 @@
+body{
+    font-family: 'Prompt',sans-serif;
+}
+
+.sides{
+    min-height: 100vh !important;
+}
+.sal{
+    background-color: #E6EDF6;
+    color: #5069F8 !important;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+
+.new{
+ 
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    height: 40px;
+    font-size: var(--fs3);
+    background-color: var(--bgcolor4);
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.active{
+    background-color: var(--bgcolor3) !important;
+}
+
+.history{
+ 
+    width: 135px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text-color);
+    height: 40px;
+    font-size: var(--fs3);
+    background-color: var(--bgcolor4);
+    text-align: center;
+    border-radius: 5px;
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.bor{
+    padding-bottom: 1rem;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.17);
+}
+
+.inputs{
+    background: var(--table-color2);
+    border: none;
+    width: 120px;
+    
+}
+.tablebg{
+    background: var(--table-color2) !important;
+    font-size: 0.8rem;
+    color: var(--table-text-color);
+   
+}
+
+.blank_row
+{
+    height: 10px !important; 
+    background-color: #FFFFFF;
+    border: none;
+    background-color: white;
+    
+}
+
+.norow{
+    background: #FFFF !important;
+    border: none !important;
+    --bs-table-accent-bg : #ffff !important
+}
+
+thead{
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+tbody tr{
+    border-radius: 10px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+    background: var(--table-color2);
+}
+th{
+    color: var(--text-color2);
+}
+
+td{
+    width: 100px;
+    border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+
+.data{
+    font-size: var(--fs3);
+    color: var(--text-color3);
+    font-weight: 400;
+
+}
+
+.confirmdata td{
+    border: none;
+}
+
+.confirmdata tr td{
+       font-size: 0.9rem;
+       color: black !important;
+       /* color: var(--text-color3); */
+       font-weight: 500;
+}
+
+.confirm{
+     background: var(--text-color2);
+     margin-right: 1rem;
+}
+.cancel{
+    background: rgba(255, 6, 6, 0.55);
+}
+
+.open{
+    display: block;
+}
+
+.close{
+    display: none;
+}
+
+
+.username{
+    padding: 0.5rem 6rem 0.5rem 1rem;
+    color: var(--text-color3);
+    font-size: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+    
+}
+
+
+.reference{
+    padding: 0.5rem 5rem 0.5rem 1rem;
+    color: var(--text-color3);
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    border-radius: 5px;
+    
+}
+
+.export,.senddata,.rotate{
+     border: 1px solid rgba(0, 0, 0, 0.13);
+     color: var(--text-color3);
+     font-size: 0.8rem;
+     text-transform: uppercase;
+}
+
+#search{
+    width: 180px;
+    padding: 0.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.13) ;
+    color: var(--text-color3);
+    font-size: 1rem;
+    
+}
+#search::placeholder{
+    color: var(--text-color3);
+    text-align: center;
+}
+#search:focus,#search:active{
+    outline: none;
+}
+.searchgroup{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
+
+.searchengine{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: flex-end
+}
+
+.search{
+        padding: 0.1rem;
+        border: 1px solid rgba(0, 0, 0, 0.13);
+}
+
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: rgba(166, 177, 241, 0.37);
+    
+    color: var(--text-color3);
+ }
+
+ td{
+    font-weight: bold;  
+   
+    color: rgba(4, 4, 2, 0.47) !important;
+ }
+
+ .thbg{
+     width: 30px !important;
+     color : var(--text-color);
+     background: #97C0EA !important;
+ }
+
+ .items{
+    color: var(--text-color3);
+    font-size: var(--fs3);
+}
+
+.show{
+    display: none;
+}
+
+.nobor:focus,.nobo:active{
+    border: none;
+    background: var(--table-color2);
+}

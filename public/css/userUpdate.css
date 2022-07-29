@@ -1,0 +1,68 @@
+.updateForm{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.se{
+    background-color: #E6EDF6;
+    color: #5069F8 !important;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    
+}
+
+.form-control{
+    width: 350px;
+}
+
+.back{
+    font-size: var(--fs6);
+    color: var(--table-color);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+
+.change{
+    font-size: var(--fs2);
+    color: var(--table-color);
+    font-weight: bold;
+}
+
+
+label{
+    font-size: var(--fs3);
+    color: var(--text-color3);
+    /* color: rgba(29, 28, 28, 0.55); */
+    font-weight: 600;
+}
+
+
+input::placeholder{
+    font-size: var(--fs6) !important;
+    color: rgba(29, 28, 28, 0.3) !important;
+    font-weight: lighter;
+    
+}
+
+.form-control{
+    color: rgba(29, 28, 28, 0.3);
+    font-weight: bold;
+}
+
+
+
+.confirm{
+    background: var(--text-color2);
+    margin-right: 1rem;
+    width: 80px;
+}
+.cancel{
+   background: rgba(255, 6, 6, 0.55);
+}
+
