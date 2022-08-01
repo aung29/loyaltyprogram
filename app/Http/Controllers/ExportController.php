@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\CardExport;
+use App\Exports\DetailExport;
+use App\Exports\MembershipExport;
+use App\Exports\SaleExport;
 use App\Models\M_Card;
 use App\Models\M_Membership_Program;
 use App\Models\M_Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ExportController extends Controller
 {
@@ -31,5 +37,42 @@ class ExportController extends Controller
         $reference = $member->reference();
 
         return view('admin.export',['sale'=> $saleResult,'card' => $cardResult ,'ref' => $reference,'saleCount'=> $saleCount,'cardCount'=>$cardCount]);
+    }
+
+
+    public function cardExport(){
+
+        $result = Excel::download(new CardExport(),'customer.xlsx');
+
+     
+        return $result;
+    }
+
+
+    public function saleExport(){
+
+        $result = Excel::download(new SaleExport(),'saleReport.xlsx');
+
+       
+        return $result;
+    }
+
+    public function detailExport(Request $request){
+
+        
+        $result = Excel::download(new DetailExport($request->id),'customerDetail.xlsx');
+
+
+        return $result;
+      
+    }
+
+
+    public function memberExport(){
+
+        $result = Excel::download(new MembershipExport(),'memberReport.xlsx');
+
+       
+        return $result;
     }
 }

@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     $('#search').keyup(function(e){
 
-        console.log($('#search').val());
+        
         $.ajaxSetup({
             headers: {
                 "X-CSRF-TOKEN": jQuery('meta[name="csrf-token"]').attr(

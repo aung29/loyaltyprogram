@@ -26,7 +26,7 @@
 
 
                             <div class="saletable open mt-3">
-                                <form action="" method="">
+                                
                                 <div class="category d-flex ">
                                     <select name="username" id="username" class="username">
                                         <option value="" selected disabled>Customer</option>
@@ -56,8 +56,9 @@
         
                                 <div class="searchengine">
                                     <div class="input-group mt-3">
-                                        <button class="btn export">Export </button>
-                                        <button  class="btn rotate" ><i class="fa-solid fa-rotate-right"></i></button>
+                                       
+                                        <button class="btn export"> <a href="excel-export2" class="excels"> Export </a> </button>
+                                         <button  class="btn rotate" >  <a href="excel-export2" class="excels"> <i class="fa-solid fa-rotate-right"></i> </a></button>
                                         
                                     </div>
                                     {{--  <div class="input-group mt-3 searchgroup">
@@ -67,7 +68,7 @@
                                         
                                     </div>  --}}
                                 </div>
-                            </form>
+                          
         
                             <div class="table-wrapper-scroll-y my-custom-scrollbar mt-4">
                             <table class="table table-striped table-sm m-auto tablefont">
@@ -115,7 +116,7 @@
 
 
                             <div class="customertable close mt-3">
-                                <form action="" method="">
+                            
                                 <div class="category d-flex ">
                                     <select name="username" id="username" class="username">
                                         <option value="" selected disabled>Customer</option>
@@ -145,18 +146,18 @@
         
                                 <div class="searchengine">
                                     <div class="input-group mt-3">
-                                        <button class="btn export">Export </button>
-                                        <button  class="btn rotate" ><i class="fa-solid fa-rotate-right"></i></button>
+                                        <button class="btn export">  <a href="/excel-export1" class="excels"> Export </a> </button>
+                                <button  class="btn rotate" ><a href="/excel-export1" class="excels"> <i class="fa-solid fa-rotate-right"></i></a></button>
                                         
                                     </div>
-                                    <div class="input-group mt-3 searchgroup">
+                                    {{-- <div class="input-group mt-3 searchgroup">
         
                                         <button  class="btn  searchicon" ><i class="fa-solid fa-magnifying-glass"></i></button>
                                         <input type="text" name="search" class="search" id="search"  placeholder="Search....">
                                         
-                                    </div>
+                                    </div> --}}
                                 </div>
-                            </form>
+                            
         
                             <div class="table-wrapper-scroll-y my-custom-scrollbar mt-4">
                             <table class="table table-striped table-sm m-auto tablefont">

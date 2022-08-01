@@ -229,3 +229,11 @@ td{
     border: none;
     background: var(--table-color2);
 }
+
+
+.excels{
+    text-decoration: none;
+    color: var(--text-color3);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}

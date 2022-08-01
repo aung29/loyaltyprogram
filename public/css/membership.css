@@ -175,3 +175,10 @@ td{
     background-color: var(--bgcolor3);
 
 }
+
+.excels{
+    text-decoration: none;
+    color: var(--text-color3);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}

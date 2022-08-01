@@ -64,7 +64,7 @@ class M_Membership_Program extends Model
            $pglist = DB::table('m_membership_program')
             ->select('*', DB::raw('m_membership_program.id AS pid'))
             ->where('m_membership_program.active', 1)
-            ->paginate(3);
+            ->paginate(10);
             
 
 

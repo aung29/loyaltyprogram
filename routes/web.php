@@ -10,7 +10,9 @@ use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\TransactionController;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
+use Maatwebsite\Excel\Facades\Excel;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,6 +50,17 @@ Route::group(['middleware' => ['checkAdmin']], function () {
         Route::resource('/setting', SettingController::class);
         Route::post('/confirm', [SaleController::class, 'confirmData']);
         Route::get('/export',[ExportController::class,'exportData']);
+
+        Route::get('/excel-export1',[ExportController::class,'cardExport']);
+        Route::get('/excel-export2',[ExportController::class,'saleExport']);
+        Route::get('/excel-export3',[ExportController::class,'memberExport']);
+        Route::get('/customers/{id}',[ExportController::class,'detailExport']);
+        // Route::get('/customers/{id}', function ($id) {
+        
+        //     Log::critical("mes",[$id]);
+        //     Log::critical("mes",[$id]); 
+        // });
+
     //   Search Sale
         Route::post('/searchCardId',[SearchController::class,'searchCard']);
         Route::post('/searchCustomer',[SearchController::class,'searchCustomer']);
