@@ -143,7 +143,7 @@
                             </div>
 
 
-                            <div class="col-10  chart mt-3 mb-3">
+                            <div class="col-10  card chart mt-3 mb-3">
                                     
                                         <div class=" d-flex justify-content-end m-4" >
                                             <input type="date" name="cal" id="cal" value="{{ $today }}"> 

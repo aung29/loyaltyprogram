@@ -57,7 +57,7 @@ body{
 .inputs{
     background: var(--table-color2);
     border: none;
-    width: 120px;
+    width: 150px;
     
 }
 .tablebg{
@@ -211,9 +211,13 @@ td{
  }
 
  .thbg{
-     width: 30px !important;
+     /* width: x !important; */
+     width: 5% !important;
      color : var(--text-color);
      background: #97C0EA !important;
+ }
+ .center{
+     text-align: center;
  }
 
  .items{

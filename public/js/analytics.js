@@ -29,45 +29,45 @@ chart(data2);
     data: formdata,
     dataType: "json",
     beforeSend:function(){
-    
+      
     },
     success: function(data){
               
+      $('#male').text(0);
+      $('#female').text(0);
       $('.num').hide(400);
       $('.active').hide(400);
       $('.left').hide(400);
       $('.gpmember').remove();
       $('.tabledata').remove();
+      // $('.blank_row').remove();
       console.log(data);
       
       let active = 0;
       if(data['reg'].length ==  0 ){
-      
+        console.log('hello');
         $('#male').text(0);
         $('#female').text(0);
       }
       for (const item of data['reg']) {
        
       
-          console.log(item)
-         
+          console.log(item);
           if(item['gender'] == "male"){
-            console.log(item['qty'])
-            $('#male').text(item['qty']);
-          }else{
-            $('#male').text(0);
+            $("#male").text(item['qty']);
           }
 
           if(item['gender'] == 'female'){
+            console.log('hello1');
             $('#female').text(item['qty']);
-          }else{
-            $('#female').text(0);
           }
 
           active += item['qty'];
           
       }
 
+       
+        
 
       for (const item of data['member']) {
        
@@ -86,9 +86,7 @@ chart(data2);
      
 
       $('.purchased').append(`
-      <tr class="blank_row">
-      <td class="norow" colspan="6"></td>
-      </tr>
+     
         
       <tr class="tabledata">
       <td>${count}</td>

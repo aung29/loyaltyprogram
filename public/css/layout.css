@@ -6,7 +6,6 @@
 
 .menu{
     width: 100%;
-    min-height: 10%;
     background-color: var(--bgcolor3);
     display: flex;
     justify-content: space-between;
@@ -72,11 +71,10 @@
 
 
 .sides{
-
     display: flex;
     flex-direction:column;
     padding: 1rem;
-    height: auto;
+    min-height: 100vh !important;
     border-right: 1px solid #b0afaf ;
     margin-top: 3.6rem;
 }

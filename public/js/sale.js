@@ -138,7 +138,7 @@ $(document).ready(function () {
                             $('.confirmdata').append(`
                            
                             <tr>
-                            <td>${count}</td>
+                            <td class='text-center'>${count}</td>
                             <td>${list.customer_name}</td>
                             <td>${list.card_id}</td>
                             <td>${list.invoice}</td>
@@ -212,7 +212,7 @@ $(document).ready(function () {
                             $('.confirmdata').append(`
                            
                             <tr>
-                            <td>${count}</td>
+                            <td class='text-center'>${count}</td>
                             <td>${list.customer_name}</td>
                             <td>${list.card_id}</td>
                             <td>${list.invoice}</td>

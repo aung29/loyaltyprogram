@@ -62,10 +62,13 @@
 }
 
 .numblog{
-    width: 60px;
+    width: 50px;
     height: 30px;
-  
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    font-weight: bold;
     background-color: var(--btn-color2);
 }
 
@@ -107,6 +110,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.custom-date{
+    border: none !important;
 }
 
 .greet{

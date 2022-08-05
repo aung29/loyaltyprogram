@@ -122,7 +122,7 @@
                                         <th>Kyats To</th>
                                         <th>Note</th>
                                         <th>Date Create</th>
-                                        {{--  <th>Action</th>  --}}
+                                        <th>Action</th>
                                         <th colspan="2"></th>
                                     </thead>
                                     <tbody class="confirmdata">
@@ -146,7 +146,7 @@
                                                    @endif
                             
                                                     <td> {{  $item->start_date }}</td>
-                                                    {{--  @if ($item->active == 1)
+                                                    @if ($item->active == 1)
                                                     <td><div class="form-check form-switch">
                                                         <input class="form-check-input" type="checkbox"  checked>
                                                 
@@ -156,7 +156,7 @@
                                                         <input class="form-check-input" type="checkbox"  >
                                                 
                                                       </div></td>
-                                                    @endif  --}}
+                                                    @endif
                                                     <td><a href="{{ route('membership.edit', $item->id) }}"><button
                                                         class="btn btn-outline-light edit" ><i class="bi bi-arrow-right"></i>Edit</button></a> </td>
                                                     <td>

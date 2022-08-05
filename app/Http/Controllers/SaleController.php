@@ -34,6 +34,7 @@ class SaleController extends Controller
            
             $reference = new M_Membership_Program();
             $member   = $reference->reference();
+            $membership = "";
             foreach ($member as  $value) {
              
               
@@ -48,16 +49,22 @@ class SaleController extends Controller
               }
             }
             
-            $transactionData = (object) [
+            if($membership != ''){
+              $transactionData = (object) [
                 'card'  =>$cardid,
                 'price' => $membership,
                 'time' => $current
             ];
-
             return response()
-        ->json(
-           $transactionData
-        );
+            ->json(
+               $transactionData
+            );
+            }else{
+              return "There is no membership for this sale! Please add membership" ;
+            }
+           
+
+          
         }else{
           return "This card is no register yet!!";
         }

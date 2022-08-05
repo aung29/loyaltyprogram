@@ -46,11 +46,11 @@
                                         </tr>
                                        <tr>
                                         
-                                        <td><input type="text" name="name"  id="name" class="inputs" autofocus required autocomplete="off" ></td>
-                                        <td><input type="text" name="card" id="card" class="inputs" required autocomplete="off"></td>
-                                        <td><input type="text" name="phone" id="phone" class="inputs" required autocomplete="off"></td>
-                                        <td><input type="text" name="dob" id="dob" class="inputs" autocomplete="off" ></td>
-                                        <td><input type="text" name="address" id="address" class="inputs" required autocomplete="off"></td>
+                                        <td><input type="text" name="name"  id="name" class="inputs"  placeholder="Enter username..." autocomplete="off"  autofocus required autocomplete="off" ></td>
+                                        <td><input type="text" name="card" id="card" class="inputs"  placeholder="Enter card id..." autocomplete="off" required autocomplete="off"></td>
+                                        <td><input type="text" name="phone" id="phone" class="inputs"  placeholder="Enter phone number..." autocomplete="off"  required autocomplete="off"></td>
+                                        <td><input type="text" name="dob" id="dob" class="inputs"  placeholder="Enter date of birth..." autocomplete="off" autocomplete="off" ></td>
+                                        <td><input type="text" name="address" id="address" class="inputs" placeholder="Enter address..." autocomplete="off" required autocomplete="off"></td>
                                         <td><div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="male">
                                             <label class="form-check-label" for="inlineRadio1">Male</label>
@@ -142,7 +142,7 @@
                         @if (count($result) > 0)
                                 @forelse ($result as $item)
                                     <tr>
-                                        <td>{{ $loop->iteration }}</td>
+                                        <td class="text-center">{{ $loop->iteration }}</td>
                                         <td>{{ $item->customer_name }}</td>
                                         <td>{{ $item->card_id }}</td>
                                         <td>{{ $item->phone }}</td>

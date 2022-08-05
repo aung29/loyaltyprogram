@@ -60,24 +60,26 @@
                                 <p class="titles">LOGIN</p>
                             </div>
 
-                            <div class="form-group mx-5 ">
+                            <div class="form-group mx-5 margins ">
                                 <label for="name" >Username</label>
                                 <input type="text" class="form-control inputs" id="name" name="name"  required autocomplete="off">
                                
                             </div>
                             @error('name')
-                            <small class="text-danger mx-5">{{ $message }}</small>
+                            <small class="text-danger mx-5 margins">{{ $message }}</small>
                             @enderror
-                            <div class="form-group mx-5">
+                            <div class="form-group mx-5 margins">
                                 <label for="password">Password</label>
                                 <input type="password" class="form-control inputs" id="password" name="password" required autocomplete="off" >
                                
                             </div>
                             @error('password')
-                            <small class="text-danger mx-5">{{ $message }}</small>
+                            <small class="text-danger mx-5 margins">{{ $message }}</small>
                             @enderror
 
-                            <button type="submit" class=" btns mt-3">Login</button>
+                           <div>
+                                <button type="submit" class=" btns mt-4 btnmargin">Login</button>
+                           </div>
                         </form>
                     </div>
                 </div>

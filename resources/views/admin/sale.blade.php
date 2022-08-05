@@ -46,10 +46,10 @@
                                         <td class="norow" colspan="6"></td>
                                     </tr>
                                    <tr>
-                                    <td><input type="text" name="name" id="name" class="inputs" ></td>
-                                    <td><input type="text" name="card" id="card" class="inputs" required></td>
-                                    <td><input type="text" name="invoice" id="invoice" class="inputs" required></td>
-                                    <td><input type="number" name="price" id="price" class="inputs type" required></td>
+                                    <td><input type="text" name="name" id="name" class="inputs" placeholder="Enter username..." autocomplete="off"></td>
+                                    <td><input type="text" name="card" id="card" class="inputs" required placeholder="Enter card id..." autocomplete="off"></td>
+                                    <td><input type="text" name="invoice" id="invoice" class="inputs" required  placeholder="Enter invoice..."  autocomplete="off"></td>
+                                    <td><input type="number" name="price" id="price" class="inputs type" required  placeholder="Enter price..." autocomplete="off"></td>
                                    </tr>
                                 </tbody>
                           
@@ -62,7 +62,7 @@
         
                             <div class="show">
                                 
-                            <table class="table table-sm m-auto">
+                            <table class=" table-sm m-auto">
                                 <form action="{{ route('sale.store') }}" method="POST">
                                     @csrf
                                 <thead class="tablebg">
@@ -81,7 +81,7 @@
                                         <td class="norow" colspan="7"></td>
                                     </tr>
                                    <tr>
-                                    <td >1</td>
+                                    <td  class="text-center">1</td>
                                     <td><input type="text" name="cname" id="cname" class="inputs nobor"  readonly></td>
                                     <td><input type="text" name="ccard" id="ccard" class="inputs nobor" readonly></td>
                                     <td><input type="text" name="cinvoice" id="cinvoice" class="inputs nobor" readonly></td>
@@ -172,7 +172,7 @@
                           
                             @forelse ($result as $item)
                             <tr class="alldata">
-                            <td>{{ $loop->iteration }}</td>
+                            <td class="text-center">{{ $loop->iteration }}</td>
                             <td>{{ $item->customer_name }}</td>
                             <td>{{ $item->card_id }}</td>
                             <td>{{ $item->invoice }}</td>

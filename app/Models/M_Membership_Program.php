@@ -128,8 +128,14 @@ class M_Membership_Program extends Model
         Log::channel('adminlog')->info("M_Membership_Program Model", [
             'Start deleteDataById'
         ]);
+
+        if(session()->has('shop')){
+            $shopid =  session('shop');
+            
+        }
         DB::table('m_membership_program')
         ->where('id',$id)
+        ->where('m_membership_program.shop_id',$shopid)
         ->delete();
 
         Log::channel('adminlog')->info("M_Membership_Program Model", [
@@ -140,8 +146,14 @@ class M_Membership_Program extends Model
 
     public function getFirstMember(){
 
+
+        if(session()->has('shop')){
+            $shopid =  session('shop');
+            
+        }
        $id = DB::table('m_membership_program')
         ->where('m_membership_program.active',1)
+        ->where('m_membership_program.shop_id',$shopid)
         ->first();
 
         return $id;
@@ -149,10 +161,15 @@ class M_Membership_Program extends Model
 
     public function searchByName($request){
 
+        if(session()->has('shop')){
+            $shopid =  session('shop');
+            
+        }
 
         $reference = DB::table('m_membership_program')
         ->select('*')
         ->where('m_membership_program.program_name','Like','%'.$request.'%')
+        ->where('m_membership_program.shop_id',$shopid)
         ->where('m_membership_program.active', 1)
         ->get();
 
@@ -161,9 +178,14 @@ class M_Membership_Program extends Model
 
     public function reference(){
 
+
+        if(session()->has('shop')){
+            $shopid =  session('shop');
+            
+        }
         $reference = DB::table('m_membership_program')
         ->select('*')
-       
+        ->where('m_membership_program.shop_id',$shopid)
         ->where('m_membership_program.active', 1)
         ->get();
 

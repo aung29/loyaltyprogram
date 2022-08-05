@@ -104,7 +104,7 @@
                         </div> 
                         <div class="date-blog ">
                             <div class="calender  ">
-                               <input type="date" name="date" id="date"  readonly value="{{ $date }}"> 
+                               <input type="date" name="date" id="date"  class="custom-date" readonly value="{{ $date }}"> 
                             </div>
                             
                         </div> 
