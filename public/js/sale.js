@@ -135,13 +135,19 @@ $(document).ready(function () {
                     
                         let  stringData = list.amount.toString();
                         let amount = numberWithCommas(stringData);
+                        let invoice = "";
+                        if(list.invoice == null){
+                            invoice = "-";
+                        }else{
+                            invoice = list.invoice;
+                        }
                             $('.confirmdata').append(`
                            
                             <tr>
                             <td class='text-center'>${count}</td>
                             <td>${list.customer_name}</td>
                             <td>${list.card_id}</td>
-                            <td>${list.invoice}</td>
+                            <td>${invoice}</td>
                             <td>${amount}</td>
                             <td>${list.program_name}</td>
                             <td>${list.transaction_date}</td>
@@ -209,13 +215,19 @@ $(document).ready(function () {
                     
                         let  stringData = list.amount.toString();
                         let amount = numberWithCommas(stringData);
+                        let invoice = "";
+                        if(list.invoice == null){
+                            invoice = "-";
+                        }else{
+                            invoice = list.invoice;
+                        }
                             $('.confirmdata').append(`
                            
                             <tr>
                             <td class='text-center'>${count}</td>
                             <td>${list.customer_name}</td>
                             <td>${list.card_id}</td>
-                            <td>${list.invoice}</td>
+                            <td>${invoice}</td>
                             <td>${amount}</td>
                             <td>${list.program_name}</td>
                             <td>${list.transaction_date}</td>
@@ -256,7 +268,7 @@ $(document).ready(function () {
             },
         })
         if($('#search').val() == ""){
-            location.reload(true);
+            location.reload();
         }
         var searchName = {name : $('#search').val()};
         if(e.keyCode == 13)
@@ -286,13 +298,19 @@ $(document).ready(function () {
                         
                             let  stringData = list.amount.toString();
                             let amount = numberWithCommas(stringData);
+                            let invoice = "";
+                            if(list.invoice == null){
+                                invoice = "-";
+                            }else{
+                                invoice = list.invoice;
+                            }
                                 $('.confirmdata').append(`
                                
                                 <tr>
                                 <td>${count}</td>
                                 <td>${list.customer_name}</td>
                                 <td>${list.card_id}</td>
-                                <td>${list.invoice}</td>
+                                <td>${invoice}</td>
                                 <td>${amount}</td>
                                 <td>${list.program_name}</td>
                                 <td>${list.transaction_date}</td>

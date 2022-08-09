@@ -45,7 +45,6 @@ class M_Transaction extends Model
         ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id' )
         ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
         ->where('m-card.active',1)
-        ->where('m_membership_program.active',1)
         ->where('m_transaction.created_by_id',$createid)
         ->orderBy('m_transaction.id','DESC')
         
@@ -100,7 +99,7 @@ class M_Transaction extends Model
         ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id' )
         ->select('m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
         ->where('m-card.active',1)
-        ->where('m_membership_program.active',1)
+      
         ->where('m_transaction.created_by_id',$createid)
         ->get();
 

@@ -61,9 +61,16 @@ class M_Membership_Program extends Model
             'Start listData'
         ]);
 
+        
+        if(session()->has('shop')){
+            $shopid =  session('shop');
+            
+        }
+
            $pglist = DB::table('m_membership_program')
             ->select('*', DB::raw('m_membership_program.id AS pid'))
-            ->where('m_membership_program.active', 1)
+            ->where('m_membership_program.shop_id',$shopid)
+            
             ->paginate(10);
             
 
@@ -170,7 +177,7 @@ class M_Membership_Program extends Model
         ->select('*')
         ->where('m_membership_program.program_name','Like','%'.$request.'%')
         ->where('m_membership_program.shop_id',$shopid)
-        ->where('m_membership_program.active', 1)
+      
         ->get();
 
         return $reference;
@@ -191,6 +198,15 @@ class M_Membership_Program extends Model
 
         return $reference;
     }
+
+    public function updateMembership($id,$active){
+
+        Log::critical("active",['id' => $active]);
+        M_Membership_Program::where('m_membership_program.id', '=', $id)
+          ->update(['m_membership_program.active' => $active]);
+      
+  }
+
 
     public function card()
     {

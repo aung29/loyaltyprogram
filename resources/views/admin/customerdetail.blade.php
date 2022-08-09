@@ -10,7 +10,7 @@
 @endsection
 
 @section('script')
-       
+       <script src="{{ asset("js/detail.js") }}"></script>
 @endsection
 
 @section('body')
@@ -30,10 +30,12 @@
                         <div class="col-3 mt-3 mx-1 d-flex">
                            <div class="d-flex flex-column name">
                                <span>Name</span>
-                               <span>ID</span>
+                               
+                               <span class="pre">ID</span>
                            </div>
                            <div class="d-flex flex-column mx-3 cardid">
                                <span>{{ $result->customer_name }}</span>
+                               
                                <span>{{ $result->card_id }}</span>
                            </div>
                           
@@ -144,7 +146,7 @@
                        </form>
 
                        <div class="totalamounts d-flex justify-content-end align-items-center ">
-                            <div class="total col-3 d-flex justify-content-between align-items-center m-3">
+                            <div class="total col-lg-3 col-md-5 col-sm-2 d-flex justify-content-between align-items-center m-3">
                                 <p class="totals">Total Amounts <span class="alltotal">{{ number_format($result->total_amount) }} Ks</span></p>
 
                              

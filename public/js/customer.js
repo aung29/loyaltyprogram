@@ -1,3 +1,12 @@
+
+$(window).on('load', function(){
+    
+    let message = $('#error').text();
+    if( message == "The card is already registered!"){
+        window.alert(message);
+    }
+});
+
 $(document).ready(function () {
 
     $('.history').click(function(){
@@ -26,7 +35,8 @@ $(document).ready(function () {
         $('.addnew').removeClass('close');
     })
 
-
+  
+    
 
     $('#search').keyup(function(e){
 

@@ -19,6 +19,7 @@
     @yield('css')
     @yield('script')
 
+    <script src="{{ asset('js/layout.js') }}"></script>
 </head>
 <body>
     @if (session('role') == 'SA')
@@ -26,7 +27,8 @@
         <div class="col-12 fixed-top menu">
             <div class="menu-label">
                 <div class="icon1 mx-3">
-                    <i class="fa-solid fa-bars icons" ></i>
+                    <button class="btn clickicon" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">  <i class="fa-solid fa-bars icons" ></i></button>
+                  
                 </div>
                 <div class="label mx-2">
                     Membership Managment
@@ -51,7 +53,7 @@
         {{-- Start Side Bar --}}
         <div class="container-fluid">
             <div class="row">
-                    <div class="col-lg-2 col-md-2  sides">
+                    <div id="sidebar" class="col-lg-2 col-md-2 col-sm-2 sides on">
                        
                             <ul class="nav nav-pills flex-column mb-auto">
                                 <li class="nav-item dh "> <a href="/dashboard" class="nav-link dh">Dashboard</a> </li>
@@ -97,7 +99,7 @@
         {{-- Start Side Bar --}}
         <div class="container-fluid">
             <div class="row">
-                    <div class="col-lg-2 col-md-2  sides">
+                    <div class="col-lg-2 col-md-2  sides on">
                        
                             <ul class="nav nav-pills flex-column mb-auto">
                                 {{-- <li class="nav-item dh "> <a href="/dashboard" class="nav-link dh">Dashboard</a> </li>
@@ -144,7 +146,7 @@
         {{-- Start Side Bar --}}
         <div class="container-fluid">
             <div class="row">
-                    <div class="col-lg-2 col-md-2  sides">
+                    <div class="col-lg-2 col-md-2 col-sm-2sides on">
                        
                             <ul class="nav nav-pills flex-column mb-auto">
                               
@@ -160,7 +162,7 @@
                         
                     
 
-                    <div class="col-lg-10 col-md-10 col-sm-12 mt-5">
+                    <div id="content" class="col-lg-10 col-md-10 col-sm-10 showbody mt-5">
                         @yield('body')
                     </div>
 

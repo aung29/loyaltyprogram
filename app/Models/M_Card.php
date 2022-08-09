@@ -19,6 +19,8 @@ class M_Card extends Model
         if(session()->has('role')){
             $shopid =  session('shop');
         }
+
+        Log::critical("hello",['arrive']);
         $membership = new M_Membership_Program();
         $mid = $membership->getFirstMember();
        
@@ -209,7 +211,7 @@ class M_Card extends Model
      FROM `m-card` as mc
      INNER JOIN m_membership_program  as member
      ON  mc.membership_id = member.id
-     WHERE mc.active = 1 AND member.active =1
+     WHERE mc.active = 1 
      GROUP BY member.program_name
      ORDER BY member.id
     ")
@@ -227,7 +229,7 @@ class M_Card extends Model
           FROM `m-card` as mc
          INNER JOIN m_membership_program  as member
          ON  mc.membership_id = member.id
-         WHERE mc.active = 1  AND member.active = 1 "));
+         WHERE mc.active = 1 "));
 
          return $result;
        
@@ -246,7 +248,7 @@ class M_Card extends Model
                 ON  mc.membership_id = member.id
                 INNER JOIN m_ad_shop as shop
                 ON mc.shop_id = shop.id
-                WHERE mc.active = 1 AND mc.shop_id = $i AND member.active =1
+                WHERE mc.active = 1 AND mc.shop_id = $i
                 GROUP BY member.program_name
                 ORDER BY member.id"
                 ));
@@ -274,7 +276,7 @@ class M_Card extends Model
                         FROM `m-card` as mc
                         JOIN m_membership_program AS member 
                         ON  mc.membership_id = member.id
-                        WHERE mc.active = 1 AND mc.shop_id = $shopid AND member.active = 1 
+                        WHERE mc.active = 1 AND mc.shop_id = $shopid 
                         GROUP BY mc.gender
                         ORDER BY mc.gender ='male' DESC
                         "));
@@ -292,7 +294,7 @@ class M_Card extends Model
             ON  mc.membership_id = member.id
             INNER JOIN m_ad_shop as shop
             ON mc.shop_id = shop.id
-            WHERE mc.active = 1 AND mc.shop_id = $shopid AND member.active =1
+            WHERE mc.active = 1 AND mc.shop_id = $shopid 
             GROUP BY member.program_name
             ORDER BY member.id"
             ));

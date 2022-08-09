@@ -148,12 +148,12 @@
                                                     <td> {{  $item->start_date }}</td>
                                                     @if ($item->active == 1)
                                                     <td><div class="form-check form-switch">
-                                                        <input class="form-check-input" type="checkbox"  checked>
+                                                        <input class="form-check-input actives" type="checkbox"  id="{{ $item->id }}" checked>
                                                 
                                                       </div></td>
                                                     @else
                                                     <td><div class="form-check form-switch">
-                                                        <input class="form-check-input" type="checkbox"  >
+                                                        <input class="form-check-input actives" type="checkbox"  id="{{ $item->id }}" >
                                                 
                                                       </div></td>
                                                     @endif

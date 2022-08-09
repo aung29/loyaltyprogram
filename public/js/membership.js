@@ -30,7 +30,46 @@ $(document).ready(function () {
         e.preventDefault();
     })
 
+    $('.actives').change(function(){
+        
+        let active;
+        $.ajaxSetup({
+            headers: {
+                "X-CSRF-TOKEN": jQuery('meta[name="csrf-token"]').attr(
+                    "content"
+                ),
+            },
+        })
 
+        if(this.checked){
+            active = 1;
+        }else{
+            active = 0;
+        }
+        let formdata = {
+            'id' : this.id,
+            'active' : active
+        }
+        console.log(formdata);
+        $.ajax({
+            type : "POST",
+            url : "changeMembership",
+            data: formdata,
+            dataType: "json",
+           
+            success:function(data){
+                // console.log(data.responseText);
+                // if(data.respo)
+              
+            },
+            error:function(err){
+                console.log(err.responseText);
+                location.reload();
+            }
+        });
+
+       
+    })
     $('#search').keyup(function(e){
 
         $.ajaxSetup({
@@ -69,6 +108,7 @@ $(document).ready(function () {
                     if(data.length >0 ){
                         for (const list of data) {
                             let note = "";
+                            let active = "";
                             let  stringData = list.kyat_from.toString();
                             let kyatF = numberWithCommas(stringData);
                             let  stringData2 = list.kyat_to.toString();
@@ -77,6 +117,18 @@ $(document).ready(function () {
                                 note = "empty";
                             }else{
                                 note = list.note;
+                            }
+
+                            if(list.active == 1){
+                                active =  ` <td><div class="form-check form-switch">
+                                <input class="form-check-input actives" type="checkbox"  id="${list.id}" checked>
+                        
+                              </div></td>`;
+                            }else{
+                                active = `  <td><div class="form-check form-switch">
+                                <input class="form-check-input actives" type="checkbox"  id='${list.id }' >
+                        
+                              </div></td>`
                             }
                                 $('.confirmdata').append(`
                                
@@ -88,7 +140,8 @@ $(document).ready(function () {
                                
                                 <td>${note}</td>
                                 <td>${list.start_date}</td>
-                               
+                                ${active}
+                                
                                 </tr>
                                 `)
                                 count++

@@ -155,4 +155,17 @@ class SearchController extends Controller
         );
 
     }
+
+
+    
+
+    public function toggleMembership(Request $request){
+
+
+        Log::critical("request",['request'=>$request]);
+         $member= new M_Membership_Program();
+         $member->updateMembership($request->input('id'),$request->input('active'));
+
+         return "Active";
+    }
 }

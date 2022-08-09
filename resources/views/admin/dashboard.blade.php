@@ -11,14 +11,14 @@
 
 @section('body')
 
-        <div class="container-fluid col-12 mx-2">
+        <div class="container-fluid col-12 mx-auto mx-2">
             <p class="dashboardtext">Overall Dashboard</p>
             
             @php
                 $cardCount = 1;
             @endphp
             <div class="row">
-                <div class="col-lg-5 col-md-6 col-sm-4 mx-3">
+                <div class="col-lg-5 col-md-6 col-sm-9 mx-3 cardsalign">
                     @if (count($cardResult) > 0)
                        @forelse ($cardResult as $item)
                        
@@ -96,7 +96,7 @@
                      
                 </div>
                 
-                <div class="col-lg-5 col-md-6 col-sm-8 totalall">
+                <div class="col-lg-5 col-md-6 col-sm-10 mt-4 mx-auto totalall">
                        <div class="header-top">
                         <div class="header-blog">
                             <p class="greet">Hello,<span>Admin</span></p>

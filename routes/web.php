@@ -73,6 +73,8 @@ Route::group(['middleware' => ['checkAdmin']], function () {
 
     // Search Member
          Route::post('/searchMembership',[SearchController::class,'searchMember']);
+         Route::post('/changeMembership',[SearchController::class,'toggleMembership']);
+         
 
          
          

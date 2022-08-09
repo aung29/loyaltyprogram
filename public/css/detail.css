@@ -224,3 +224,17 @@ table{
     font-size: 0.8rem;
     text-transform: uppercase;
 }
+
+
+@media only screen and (max-width: 768px){
+
+
+
+    .totals{
+        margin-left: 2rem;
+    }
+    .alltotal{
+        margin-left: 1.9rem;
+    }
+    
+}

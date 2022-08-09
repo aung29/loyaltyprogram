@@ -60,7 +60,16 @@ class SaleController extends Controller
                $transactionData
             );
             }else{
-              return "There is no membership for this sale! Please add membership" ;
+
+              $transactionData = (object) [
+                'card'  =>$cardid,
+                'price' => $request->input('price'),
+                'time' => $current
+            ];
+              return response()
+              ->json(
+                 $transactionData
+              ) ;
             }
            
 

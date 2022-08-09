@@ -25,10 +25,11 @@
                          </div>
 
 
-                         <div class="table-responsive addnew close mt-3 ">
+                         <div class=" addnew close mt-3 ">
                             <form action="{{ route('customer.store') }}" method="POST">
                                 @csrf
-                                <table class="table table-sm m-auto">
+                                <div class="table-responsive">
+                                <table class="table table-md table-sm m-auto">
                                     <thead class="tablebg">
                                       
                                         <th>Customer Name</th>
@@ -62,16 +63,22 @@
                                           </td>
                                        </tr>
                                     </tbody>
+                                    
+                                   
                                     @error('card')
-                                    <small class="text-danger mx-5">{{ $message }}</small>
+                                   
+                                    <small class="text-danger mx-5" id="error">{{ $message }}</small>
                                     @enderror
                                 </table>
-                                <div class="d-flex justify-content-end align-items-end mt-3 p-3 m-3">
-                                    <button type="submit" class="btn btn-secondary confirm">Confirm</button>
-                                    <button  class="btn btn-danger cancel">Cancel</button>
-                                 </div>
-                            </form>
-                        </div>
+                            </div>
+                                
+                        
+                        <div class="d-flex justify-content-end align-items-end mt-3 p-3 m-3 btnwidth">
+                            <button type="submit" class="btn btn-secondary confirm">Confirm</button>
+                            <button  class="btn btn-danger cancel">Cancel</button>
+                         </div>
+                    </form>
+                </div>
 
 
                         <div class="historytable open mt-3">
@@ -169,4 +176,7 @@
                     </div>
 
                     </div>
+
+
+                  
 @endsection

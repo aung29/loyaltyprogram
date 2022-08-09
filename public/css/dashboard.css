@@ -166,3 +166,42 @@ td{
     color: var(--text-color3);
     font-size: var(--fs3);
 }
+
+
+
+@media only screen and (max-width: 768px){
+
+
+    .cardsalign{
+     
+        margin-left: 9rem !important;
+    }
+
+}
+
+
+
+
+@media only screen and (max-width: 480px){
+
+
+    #sidebar{
+        margin-top: 5rem !important;
+    }
+    .content{
+        margin-top: 4rem !important;
+    }
+    .cardsalign{
+     
+        margin-left: 4rem !important;
+    }
+
+    .cart1,.cart2,.cart3{
+        width: 250px;
+        height: 230px;
+        margin-right: 5rem !important;
+    }
+    .totalall{
+        margin-left: 2rem !important;
+    }
+}

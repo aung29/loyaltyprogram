@@ -61,9 +61,9 @@ class CardController extends Controller
 
         $card = new M_Card();
      
+        
         $card->saveData($request);
-     
-
+       
 
 
         Log::channel('adminlog')->info("MembershipController", [

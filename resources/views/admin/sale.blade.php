@@ -175,7 +175,12 @@
                             <td class="text-center">{{ $loop->iteration }}</td>
                             <td>{{ $item->customer_name }}</td>
                             <td>{{ $item->card_id }}</td>
+                            @if ($item->invoice == "")
+                            <td>-</td>
+                            @else
                             <td>{{ $item->invoice }}</td>
+                            @endif
+                           
                             <td>{{ number_format($item->amount) }} Ks</td>
                             <td>{{ $item->program_name }}</td>
                             <td>{{ $item->transaction_date }}</td>

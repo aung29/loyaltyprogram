@@ -242,3 +242,7 @@ td{
     font-size: 0.8rem;
     text-transform: uppercase;
 }
+
+.btnwidth{
+    width: 100%;
+}
