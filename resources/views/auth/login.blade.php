@@ -51,11 +51,11 @@
                 <div class="col-lg-4 col-md-10 col-sm-10 ">
                    
                  <div class="container blogs">
-                <div class=" card form-containers">
+                <div class="form-containers">
                     <div class="imageblog">
                         <img src="{{ url('image/image 1.png') }}" alt="logo" class="images">
                     </div>
-                    <div class="form-container">
+                    <div class="form-container mt-4">
                         <form action="/admin" method="POST" class="forms">
                             @csrf
                             <div class="title">
