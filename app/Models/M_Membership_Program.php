@@ -159,7 +159,6 @@ class M_Membership_Program extends Model
             
         }
        $id = DB::table('m_membership_program')
-        ->where('m_membership_program.active',1)
         ->where('m_membership_program.shop_id',$shopid)
         ->first();
 

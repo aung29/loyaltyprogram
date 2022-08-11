@@ -11,13 +11,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ url('css/common.css') }}">
     <link rel="stylesheet" href="{{ url('css/login.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{ asset('js/login.js') }}"></script>
 </head>
 <body>
     {{--  Start Login Section --}}
      <section class="">
         <div class="container-fluid d-flex justify-content-center align-items-center logins">
             <div class="row">
-                <div class="col-6">
+                <div class="col-lg-6 col-md-2 col-sm-1 shopimage ">
                     <div class="container">
                         <div class="main-image">
                             <img src="{{ url('image/title.png') }}" alt="">
@@ -46,10 +48,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-4 mx-auto">
+                <div class="col-lg-4 col-md-10 col-sm-10 ">
                    
                  <div class="container blogs">
-                <div class="form-containers">
+                <div class=" card form-containers">
                     <div class="imageblog">
                         <img src="{{ url('image/image 1.png') }}" alt="logo" class="images">
                     </div>

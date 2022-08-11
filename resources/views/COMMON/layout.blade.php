@@ -118,7 +118,7 @@
 
     @elseif (session('role') == 'S')
                         {{--  Start Navigation Bar  --}}
-        <div class="col-12 fixed-top menu">
+        <div  class="col-12 fixed-top menu">
             <div class="menu-label">
                 <div class="icon1 mx-3">
                     <i class="fa-solid fa-bars icons" ></i>
@@ -146,7 +146,7 @@
         {{-- Start Side Bar --}}
         <div class="container-fluid">
             <div class="row">
-                    <div class="col-lg-2 col-md-2 col-sm-2sides on">
+                    <div id="sidebar" class="col-lg-2 col-md-2 col-sm-2 sides on">
                        
                             <ul class="nav nav-pills flex-column mb-auto">
                               

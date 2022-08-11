@@ -25,7 +25,6 @@ class M_Card extends Model
         $mid = $membership->getFirstMember();
        
         $card = new M_Card();
-
         $card->card_id = $request->input('card');
         $card->customer_name =$request->input('name');
         $card->phone =  $request->input('phone');

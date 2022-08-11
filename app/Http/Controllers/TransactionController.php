@@ -73,6 +73,7 @@ class TransactionController extends Controller
        
         $reference = new M_Membership_Program();
         $member   = $reference->reference();
+        // if($member == null) abort(404);
         
         
         $transaction  = new M_Transaction();
@@ -86,13 +87,18 @@ class TransactionController extends Controller
         $transaction->storeData($request,$cardid[0]->id,$price,$current);
         $card->updateAmount($cardid[0]->id,$updateAmount);
 
+        $memberid = 0;
         foreach ($member as  $value) {
+            Log::critical("value",['value' => $value]);
          if($updateAmount >= $value->kyat_from && $updateAmount <= $value->kyat_to ){
                  $memberid = $value->id;
              }  
         }
 
-        $card->updateMembership($cardid[0]->id,$memberid);
+        if($memberid != 0 ){
+            $card->updateMembership($cardid[0]->id,$memberid);
+        }
+      
     });
 
         return redirect('sale');
