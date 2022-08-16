@@ -139,7 +139,7 @@
                                     <td>{{ $result->program_name }}</td>
                                     <td class="text-center">{{ $result->counts }}</td>
                                     <td class="text-end">{{ $result->total }}</td>
-                                 </tr>
+                                     </tr>
                                  
                                   
                                

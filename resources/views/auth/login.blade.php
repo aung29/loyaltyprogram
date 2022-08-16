@@ -31,7 +31,7 @@
                             </div>
 
                             <div class="sub1">
-                                <img src="{{ url('image/image 1.png') }}" alt="" class="subimages">
+                                <img src="{{ url('image/image 3.jpg') }}" alt="" class="subimages">
                             </div>
 
                             <div class="sub1">
@@ -42,9 +42,7 @@
                                 <img src="{{ url('image/image 5.png') }}" alt="" class="subimage1">
                             </div>
 
-                            <div class="sub1">
-                                <img src="{{ url('image/image 6.png') }}" alt="" class="subimage2">
-                            </div>
+                          
                         </div>
                     </div>
                 </div>

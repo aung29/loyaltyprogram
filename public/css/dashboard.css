@@ -69,7 +69,8 @@
     align-items: center;
     text-align: center;
     font-weight: bold;
-    background-color: var(--btn-color2);
+    border-radius: 0.3rem;
+    background-color: #fff;
 }
 
 .customer{
@@ -146,7 +147,7 @@ th{
 
 td{
     color : var(--table-color);
-    border-bottom: dashed;
+    border-bottom: dotted;
     font-size: var(--fs3);
     /* border-style: dotted; */
 }

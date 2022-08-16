@@ -70,14 +70,16 @@
 }
 
 
-.confirmdata td{
-    border: none;
-}
+/* .confirmdata td{
+  
+} */
 
 .confirmdata tr td{
        font-size: 0.9rem;
        color: var(--text-color3);
        font-weight: 500;
+       border: none;
+       width: 100px;
 }
 
 .blank_row
@@ -108,16 +110,12 @@ th{
     color: var(--text-color2);
 }
 
-td{
-    width: 100px;
+/* td{
+   
     /* border-left: 1px solid rgba(0, 0, 0, 0.12); */
-}
+/* } */ 
 
-.thbg{
-    width: 20px !important;
-    color : var(--text-color);
-    background: #97C0EA !important;
-}
+
 
 
 
@@ -196,9 +194,10 @@ td{
  }
 
  .thbg{
-     width: 5% !important;
+     width: 4% !important;
      color : var(--text-color);
      background: #97C0EA !important;
+     text-align: center;
  }
 
  .items{

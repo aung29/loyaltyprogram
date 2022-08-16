@@ -123,7 +123,7 @@
                             
                                 <div class="category d-flex ">
                                     <select name="username" id="username" class="username">
-                                        <option value="" selected disabled>Customer</option>
+                                        <option value="0" selected>Customer</option>
                                         @if (count($cardCount) > 0)
                                         @forelse ($cardCount as $item)
                                         <option value="{{ $item->id }}">{{ $item->customer_name }}</option>
@@ -136,7 +136,7 @@
         
         
                                     <select name="username" id="username" class="reference">
-                                        <option value="" selected disabled>Reference</option>
+                                        <option value="0" selected>Reference</option>
                                         @if (count($ref) > 0)
                                         @forelse ($ref as $item)
                                         <option value="{{ $item->id }}">{{ $item->program_name }}</option>
@@ -151,7 +151,7 @@
                                 <div class="searchengine">
                                     <div class="input-group mt-3">
                                         <button class="btn export">  <a href="/excel-export1" class="excels"> Export </a> </button>
-                                <button  class="btn rotate" ><a href="/excel-export1" class="excels"> <i class="fa-solid fa-rotate-right"></i></a></button>
+                                <button  class="btn rotate" ><i class="fa-solid fa-rotate-right"></i></button>
                                         
                                     </div>
                                     {{-- <div class="input-group mt-3 searchgroup">

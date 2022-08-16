@@ -15,8 +15,8 @@
 }
 
 .imageblog{
-    width: 40% !important;
-    height: 40% !important;
+    width: 32% !important;
+    height: 32% !important;
     margin :auto;
     text-align: center;
     
@@ -52,11 +52,11 @@
 }
 
 .margins{
-    margin-left: 7rem !important;
+    margin-left: 6.5rem !important;
 }
 
 .btnmargin{
-    margin-left: 11rem !important;
+    margin-left: 10.3rem !important;
 }
 
 label{
@@ -77,10 +77,11 @@ label{
 
 .btns{
     width: 160px;
-    height: 30px;
+    height: 38px;
     text-align: center;
     margin-left: 7rem;
     border:none;
+    border-radius: 8px;
     background-color: var(--btn-color);
     color: var(--text-color);
 }

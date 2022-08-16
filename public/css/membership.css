@@ -90,6 +90,7 @@ label{
 
 #search{
    width: 210px;
+   height: 33px;
    padding: 0.2rem;
    border: 1px solid rgba(0, 0, 0, 0.13) ;
    color: var(--text-color3);

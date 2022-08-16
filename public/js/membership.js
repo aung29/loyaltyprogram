@@ -25,6 +25,9 @@ $(document).ready(function () {
         $('.formmember').removeClass('close');
     })
 
+    $('.rotate').click(function(){
+        location.reload();
+    })
 
     $('.btnedit').click(function(e){
         e.preventDefault();

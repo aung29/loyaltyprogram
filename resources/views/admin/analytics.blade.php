@@ -127,7 +127,7 @@
 
                                     @forelse ($totalamount as $item)
                                         <tr class="tabledata">
-                                            <td>{{ $loop->iteration }}</td>
+                                            <td class="text-center">{{ $loop->iteration }}</td>
                                             <td>{{ $item->customer_name }}</td>
                                             <td>{{ $item->card_id }}</td>
                                             <td>{{ $item->phone }}</td>

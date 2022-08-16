@@ -106,9 +106,13 @@ $(document).ready(function () {
             },
         })
 
-        let formdata = {id : $('#reference').val()};
-        console.log(formdata);
+        
+        if($('#reference').val() == 0){
+            location.reload();
+        }else{
 
+            let formdata = {id : $('#reference').val()};
+        
         $.ajax({
             type: "POST",
             url: "searchReference",
@@ -172,6 +176,9 @@ $(document).ready(function () {
                 console.log(err);
             }
         })
+        }
+
+        
           
       })
 
@@ -187,76 +194,85 @@ $(document).ready(function () {
             },
         })
 
-        let formdata = {cusname : $('#username').val()};
-        console.log(formdata);
 
-        $.ajax({
-            type: "POST",
-            url: "searchCustomer",
-            data: formdata,
-            dataType: "json",
-            beforeSend: function(){
-                $('.confirmdata').hide();
-                $('.confirmdata').empty();
-              
-        },  
-            success:function(data){
-                console.log(data);
-
-                $('.confirmdata').show();
-                $('.confirmdata').append(`
-                            <tr class="blank_row">
-                            <td class="norow" colspan="7"></td>
-                            </tr>
-                            `);
-                let count = 1;
-                if(data.length >0 ){
-                    for (const list of data) {
-                    
-                        let  stringData = list.amount.toString();
-                        let amount = numberWithCommas(stringData);
-                        let invoice = "";
-                        if(list.invoice == null){
-                            invoice = "-";
-                        }else{
-                            invoice = list.invoice;
-                        }
-                            $('.confirmdata').append(`
-                           
-                            <tr>
-                            <td class='text-center'>${count}</td>
-                            <td>${list.customer_name}</td>
-                            <td>${list.card_id}</td>
-                            <td>${invoice}</td>
-                            <td>${amount}</td>
-                            <td>${list.program_name}</td>
-                            <td>${list.transaction_date}</td>
-                            </tr>
-                            `)
-                            count++
-                    }
-                    $('.sale-count').text(data.length);
-                    $('.links').empty();
-                }else{
-
+        if($('#username').val() == 0){
+            location.reload();
+        }else{
+            let formdata = {cusname : $('#username').val()};
+            console.log(formdata);
+    
+            $.ajax({
+                type: "POST",
+                url: "searchCustomer",
+                data: formdata,
+                dataType: "json",
+                beforeSend: function(){
+                    $('.confirmdata').hide();
+                    $('.confirmdata').empty();
+                  
+            },  
+                success:function(data){
+                    console.log(data);
+    
+                    $('.confirmdata').show();
                     $('.confirmdata').append(`
-                    <tr class="blank_row">
-                    <td class="norow text-center" colspan="7">There is no sale for this customer</td>
-                    </tr>`);
-                    $('.sale-count').text('0');
-                    $('.links').hide();
+                                <tr class="blank_row">
+                                <td class="norow" colspan="7"></td>
+                                </tr>
+                                `);
+                    let count = 1;
+                    if(data.length >0 ){
+                        for (const list of data) {
+                        
+                            let  stringData = list.amount.toString();
+                            let amount = numberWithCommas(stringData);
+                            let invoice = "";
+                            if(list.invoice == null){
+                                invoice = "-";
+                            }else{
+                                invoice = list.invoice;
+                            }
+                                $('.confirmdata').append(`
+                               
+                                <tr>
+                                <td class='text-center'>${count}</td>
+                                <td>${list.customer_name}</td>
+                                <td>${list.card_id}</td>
+                                <td>${invoice}</td>
+                                <td>${amount}</td>
+                                <td>${list.program_name}</td>
+                                <td>${list.transaction_date}</td>
+                                </tr>
+                                `)
+                                count++
+                        }
+                        $('.sale-count').text(data.length);
+                        $('.links').empty();
+                    }else{
+    
+                        $('.confirmdata').append(`
+                        <tr class="blank_row">
+                        <td class="norow text-center" colspan="7">There is no sale for this customer</td>
+                        </tr>`);
+                        $('.sale-count').text('0');
+                        $('.links').hide();
+                    }
+    
+                },
+                error:function(err){
+                    console.log(err);
                 }
+    
+            });
+        }
 
-            },
-            error:function(err){
-                console.log(err);
-            }
-
-        });
+       
 
      })
 
-     
+     $('.rotate').click(function(){
+         location.reload();
+     })
 
       $('#search').keyup(function(e){
 

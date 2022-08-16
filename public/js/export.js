@@ -12,6 +12,10 @@ $(document).ready(function () {
         $('.saletable').removeClass('open');
     })
 
+    $('.rotate').click(function(){
+        location.reload();
+    })
+
     $('.sales').click(function(){
 
         $('.customers').removeClass('active');

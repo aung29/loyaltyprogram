@@ -36,7 +36,9 @@ $(document).ready(function () {
     })
 
   
-    
+    $('.rotate').click(function(){
+        location.reload();
+    })
 
     $('#search').keyup(function(e){
 
@@ -130,67 +132,74 @@ $(document).ready(function () {
                    ),
                },
            })
+
+           if($('#username').val() == 0){
+                location.reload();
+           }else{
+
+            let formdata = {cusname : $('#username').val()};
+       
    
-           let formdata = {cusname : $('#username').val()};
-           console.log(formdata);
-   
-           $.ajax({
-               type: "POST",
-               url: "changeCustomer",
-               data: formdata,
-               dataType: "json",
-               beforeSend: function(){
-                   $('.confirmdata').hide();
-                   $('.confirmdata').empty();
-                 
-           },  
-               success:function(data){
-                   console.log(data);
-   
-                   $('.confirmdata').show();
-                   $('.confirmdata').append(`
-                               <tr class="blank_row">
-                               <td class="norow" colspan="7"></td>
-                               </tr>
-                               `);
-                   let count = 1;
-                   if(data.length >0 ){
-                       for (const list of data) {
-                       
-                          
-                               $('.confirmdata').append(`
-                              
-                               <tr>
-                                <td class='text-center'>${count}</td>
-                                <td>${list.customer_name}</td>
-                                <td>${list.card_id}</td>
-                                <td>${list.phone}</td>
-                                <td>${list.dob}</td>
-                                <td>${list.address}</td>
-                                <td class="text-center"><a href="customer/${list.id}"><button
-                                class="btn btn-outline-light edit" ><i class="bi bi-arrow-right"></i>Detail</button></a></td>
+            $.ajax({
+                type: "POST",
+                url: "changeCustomer",
+                data: formdata,
+                dataType: "json",
+                beforeSend: function(){
+                    $('.confirmdata').hide();
+                    $('.confirmdata').empty();
+                  
+            },  
+                success:function(data){
+                    console.log(data);
+    
+                    $('.confirmdata').show();
+                    $('.confirmdata').append(`
+                                <tr class="blank_row">
+                                <td class="norow" colspan="7"></td>
                                 </tr>
-                               `)
-                               count++
-                       }
-                       $('.cards').text(data.length);
-                       $('.links').empty();
-                   }else{
+                                `);
+                    let count = 1;
+                    if(data.length >0 ){
+                        for (const list of data) {
+                        
+                           
+                                $('.confirmdata').append(`
+                               
+                                <tr>
+                                 <td class='text-center'>${count}</td>
+                                 <td>${list.customer_name}</td>
+                                 <td>${list.card_id}</td>
+                                 <td>${list.phone}</td>
+                                 <td>${list.dob}</td>
+                                 <td>${list.address}</td>
+                                 <td class="text-center"><a href="customer/${list.id}"><button
+                                 class="btn btn-outline-light edit" ><i class="bi bi-arrow-right"></i>Detail</button></a></td>
+                                 </tr>
+                                `)
+                                count++
+                        }
+                        $('.cards').text(data.length);
+                        $('.links').empty();
+                    }else{
+    
+                        $('.confirmdata').append(`
+                        <tr class="blank_row">
+                        <td class="norow text-center" colspan="7">There is no customer!</td>
+                        </tr>`);
+                        $('.cards').text(data.length);
+                        $('.links').hide();
+                    }
+    
+                },
+                error:function(err){
+                    console.log(err);
+                }
+    
+            });
+           }
    
-                       $('.confirmdata').append(`
-                       <tr class="blank_row">
-                       <td class="norow text-center" colspan="7">There is no customer!</td>
-                       </tr>`);
-                       $('.cards').text(data.length);
-                       $('.links').hide();
-                   }
-   
-               },
-               error:function(err){
-                   console.log(err);
-               }
-   
-           });
+         
    
         })
 
@@ -206,8 +215,11 @@ $(document).ready(function () {
                   ),
               },
           })
-  
-          let formdata = {id : $('#reference').val()};
+
+          if($('#reference').val() == 0){
+                location.reload();
+          }else{
+            let formdata = {id : $('#reference').val()};
           console.log(formdata);
   
           $.ajax({
@@ -267,6 +279,9 @@ $(document).ready(function () {
                   console.log(err);
               }
           })
+          }
+  
+          
             
         })
 

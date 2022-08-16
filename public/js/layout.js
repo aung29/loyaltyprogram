@@ -33,6 +33,8 @@ $(document).ready(function () {
           
             $(`ul li:nth-child(${index})`).hide();
         }
+
+      
     
 
     }

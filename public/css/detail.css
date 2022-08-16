@@ -175,6 +175,13 @@ table{
  }
  
  
+ .confirmdata tr td{
+    font-size: 0.9rem;
+    color: var(--text-color3);
+    font-weight: 500;
+    border: none;
+    width: 100px;
+}
  td{
     
     font-weight: bold;  

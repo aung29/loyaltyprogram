@@ -108,16 +108,16 @@ td{
 
 }
 
-.confirmdata td{
-    border: none;
-}
+
 
 .confirmdata tr td{
-       font-size: 0.9rem;
-       color: black !important;
-       /* color: var(--text-color3); */
-       font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-color3);
+    font-weight: 500;
+    border: none;
+    width: 100px;
 }
+
 
 .confirm{
      background: var(--text-color2);
@@ -165,6 +165,7 @@ td{
 
 #search{
     width: 180px;
+    height: 33px;
     padding: 0.2rem;
     border: 1px solid rgba(0, 0, 0, 0.13) ;
     color: var(--text-color3);
@@ -212,9 +213,10 @@ td{
 
  .thbg{
      /* width: x !important; */
-     width: 5% !important;
+     width: 4% !important;
      color : var(--text-color);
      background: #97C0EA !important;
+     text-align: center;
  }
  .center{
      text-align: center;

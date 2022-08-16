@@ -119,7 +119,6 @@ class M_Transaction extends Model
         ->where('m-card.card_id','Like','%'.$request.'%')
         ->where('m-card.active',1)
         ->where('m_transaction.created_by_id',$createid)
-        ->where('m_membership_program.active',1)
         ->orderBy('m_transaction.id','DESC')
         ->get();
      
@@ -142,7 +141,6 @@ class M_Transaction extends Model
         ->where('m-card.id',$id)
         ->where('m-card.active',1)
         ->where('m_transaction.created_by_id',$createid)
-        ->where('m_membership_program.active',1)
         ->orderBy('m_transaction.id','DESC')
         ->get();
 

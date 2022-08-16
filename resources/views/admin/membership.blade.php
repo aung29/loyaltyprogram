@@ -101,7 +101,7 @@
                             <div class="searchengine">
                                 <div class="input-group mt-3">
                                     <button class="btn export"> <a href="excel-export3" class="excels"> Export </a> </button>
-                                    <button  class="btn rotate" >  <a href="excel-export3" class="excels"> <i class="fa-solid fa-rotate-right"></i> </a></button>
+                                    <button  class="btn rotate" >   <i class="fa-solid fa-rotate-right"></i></button>
                                     
                                 </div>
                                 <div class="input-group mt-3 searchgroup">

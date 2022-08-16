@@ -96,7 +96,7 @@
                                 <th>User name</th>
                                 <th>Password</th>
                                 <th>Roles</th>
-                                <th>Action</th>
+                                <th colspan="1" class="text-center">Action</th>
                                 {{--  <th>Active</th>  --}}
                               </tr>
                             </thead>
@@ -111,23 +111,23 @@
                                         @switch($item->role)
                                             @case("SA")
                                             <td>Super Admin</td>
-                                            <td> <i class="fa fa-pencil pen"></i>
+                                            {{--  <td> <i class="fa fa-pencil pen"></i>
                                                 <i class="fa-solid fa-circle-xmark xmark"></i>
                                                <i class="fa-solid fa-circle-check check"></i>
-                                            </td>
+                                            </td>  --}}
                                                 @break
                                             @case("OP")
                                             <td>Manager</td>
-                                            <td> 
+                                            {{--  <td> 
                                                 <i class="fa-solid fa-circle-xmark xmark"></i></a>
                                                <i class="fa-solid fa-circle-check check"></i>
-                                            </td>
+                                            </td>  --}}
                                                 @break
                                             @case("S")
                                             <td>Sale</td>
-                                                <td> 
+                                                {{--  <td> 
                                                    <i class="fa-solid fa-circle-check check"></i>
-                                                </td>
+                                                </td>  --}}
                                                 @break
                                             @default
                                                 
