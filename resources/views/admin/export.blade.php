@@ -28,8 +28,8 @@
                             <div class="saletable open mt-3">
                                 
                                 <div class="category d-flex ">
-                                    <select name="username" id="username" class="username">
-                                        <option value="" selected disabled>Customer</option>
+                                    <select name="username1" id="username1" class="username">
+                                        <option value="0" selected>Customer</option>
                                  @if (count($cardCount) > 0)
                                 @forelse ($cardCount as $item)
                                 <option value="{{ $item->id }}">{{ $item->customer_name }}</option>
@@ -41,8 +41,8 @@
                                     </select>
         
         
-                                    <select name="username" id="username" class="reference">
-                                        <option value="" selected disabled>Reference</option>
+                                    <select name="reference1" id="reference1" class="reference">
+                                        <option value="0" selected>Reference</option>
                                         @if (count($ref) > 0)
                                         @forelse ($ref as $item)
                                         <option value="{{ $item->id }}">{{ $item->program_name }}</option>
@@ -111,9 +111,9 @@
                             </div>
         
                             <div class="d-flex justify-content-between mt-5">
-                                <p class="items">Total Items : <span>{{ count($saleCount) }}</span></p>
+                                <p class="items">Total Items : <span class="sale-count">{{ count($saleCount) }}</span></p>
         
-                                <div class="d-flex justify-content-center">{{ $sale->links() }}</div>
+                                <div class="d-flex justify-content-center links">{{ $sale->links() }}</div>
                            </div>
                             </div>
 
@@ -122,7 +122,7 @@
                             <div class="customertable close mt-3">
                             
                                 <div class="category d-flex ">
-                                    <select name="username" id="username" class="username">
+                                    <select name="username2" id="username2" class="username">
                                         <option value="0" selected>Customer</option>
                                         @if (count($cardCount) > 0)
                                         @forelse ($cardCount as $item)
@@ -135,7 +135,7 @@
                                     </select>
         
         
-                                    <select name="username" id="username" class="reference">
+                                    <select name="reference2" id="reference2" class="reference">
                                         <option value="0" selected>Reference</option>
                                         @if (count($ref) > 0)
                                         @forelse ($ref as $item)
@@ -199,9 +199,9 @@
                             </div>
         
                             <div class="d-flex justify-content-between mt-5">
-                                <p class="items">Total Items : <span>{{ count($card) }}</span></p>
+                                <p class="items">Total Items : <span class="cards">{{ count($card) }}</span></p>
         
-                                <div class="d-flex justify-content-center">{{ $card->links() }}</div>
+                                <div class="d-flex justify-content-center links">{{ $card->links() }}</div>
                            </div>
                             </div>
                     </div> 

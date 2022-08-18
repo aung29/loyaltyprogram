@@ -201,6 +201,7 @@ class M_Card extends Model
     }
 
 
+   
     public function groupDataByMember(){
 
 

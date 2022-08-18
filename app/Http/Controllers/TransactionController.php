@@ -25,8 +25,8 @@ class TransactionController extends Controller
             $shopid =  session('shop');
         }
         $transaction = new M_Transaction();
-         $result  =   $transaction->showData();
-      $count =  $transaction->getCount();
+         $result  =   $transaction->showData($shopid);
+      $count =  $transaction->getCount($shopid);
 
       $card = new M_Card();
       $cardCount = $card->cardCount($shopid);

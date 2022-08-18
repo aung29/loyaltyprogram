@@ -162,10 +162,23 @@ class SearchController extends Controller
     public function toggleMembership(Request $request){
 
 
-        Log::critical("request",['request'=>$request]);
+      
          $member= new M_Membership_Program();
          $member->updateMembership($request->input('id'),$request->input('active'));
 
          return "Active";
     }
+
+
+    public function searchAllReport(Request $request){
+
+        if(session()->has('role')){
+            $shopid =  session('shop');
+        }
+
+
+        
+
+    }
+
 }

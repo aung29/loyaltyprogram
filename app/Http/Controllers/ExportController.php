@@ -24,8 +24,8 @@ class ExportController extends Controller
         }
 
         $transaction = new M_Transaction();
-        $saleResult  =   $transaction->showData();
-        $saleCount =  $transaction->getCount();
+        $saleResult  =   $transaction->showData($shopid);
+        $saleCount =  $transaction->getCount($shopid);
 
 
 

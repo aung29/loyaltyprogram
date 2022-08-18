@@ -33,19 +33,15 @@ class M_Transaction extends Model
         
     }
 
-    public function showData(){
+    public function showData($shopid){
            
-        if(session()->has('adminId')){
-            $createid =  session('adminId');
-        }
-
 
         $transList= DB::table('m_transaction')
         ->join('m-card', 'm_transaction.card_id', '=', 'm-card.id')
         ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id' )
         ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
         ->where('m-card.active',1)
-        ->where('m_transaction.created_by_id',$createid)
+        ->where('m-card.shop_id',$shopid)
         ->orderBy('m_transaction.id','DESC')
         
         ->paginate(10);
@@ -87,20 +83,18 @@ class M_Transaction extends Model
         return $specificData;
     }
 
-    public function getCount(){
+    public function getCount($shopid){
 
         
-        if(session()->has('adminId')){
-            $createid =  session('adminId');
-        }
+       
 
         $count = DB::table('m_transaction')
         ->join('m-card', 'm_transaction.card_id', '=', 'm-card.id')
         ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id' )
         ->select('m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
         ->where('m-card.active',1)
-      
-        ->where('m_transaction.created_by_id',$createid)
+        ->where('m-card.shop_id',$shopid)
+     
         ->get();
 
         return $count;
@@ -109,7 +103,7 @@ class M_Transaction extends Model
     public function searchCardByCardid($request){
 
         if(session()->has('adminId')){
-            $createid =  session('adminId');
+            $shopid =  session('shop');
         }
 
         $transList= DB::table('m_transaction')
@@ -118,7 +112,8 @@ class M_Transaction extends Model
         ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
         ->where('m-card.card_id','Like','%'.$request.'%')
         ->where('m-card.active',1)
-        ->where('m_transaction.created_by_id',$createid)
+        ->where('m-card.shop_id',$shopid)
+      
         ->orderBy('m_transaction.id','DESC')
         ->get();
      
@@ -128,10 +123,10 @@ class M_Transaction extends Model
         
     }
 
+    public function reportData($id){
 
-    public function searchCustomerByCardId($id){
         if(session()->has('adminId')){
-            $createid =  session('adminId');
+            $shopid =  session('shop');
         }
 
         $transList= DB::table('m_transaction')
@@ -140,7 +135,26 @@ class M_Transaction extends Model
         ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
         ->where('m-card.id',$id)
         ->where('m-card.active',1)
-        ->where('m_transaction.created_by_id',$createid)
+        ->where('m-card.shop_id',$shopid)
+        ->orderBy('m_transaction.id','DESC')
+        ->get();
+
+       return $transList;   
+    }
+
+
+    public function searchCustomerByCardId($id){
+        if(session()->has('adminId')){
+            $shopid =  session('shop');
+        }
+
+        $transList= DB::table('m_transaction')
+        ->join('m-card', 'm_transaction.card_id', '=', 'm-card.id')
+        ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id' )
+        ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
+        ->where('m-card.id',$id)
+        ->where('m-card.active',1)
+        ->where('m-card.shop_id',$shopid)
         ->orderBy('m_transaction.id','DESC')
         ->get();
 
@@ -151,7 +165,7 @@ class M_Transaction extends Model
     public function searchByReference($id){
 
         if(session()->has('adminId')){
-            $createid =  session('adminId');
+            $shopid =  session('shop');
         }
 
       $transList  = DB::table('m_transaction')
@@ -161,7 +175,8 @@ class M_Transaction extends Model
         ->where('m-card.membership_id',$id)
         ->where('m-card.active',1)
         ->where('m_membership_program.active',1)
-        ->where('m_transaction.created_by_id',$createid)
+        ->where('m-card.shop_id',$shopid)
+       
         ->orderBy('m_transaction.id','DESC')
         ->get();
           
