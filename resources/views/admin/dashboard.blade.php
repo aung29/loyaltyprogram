@@ -111,7 +111,7 @@
                        </div>
 
 
-                       <div class="mt-4 text-center">
+                       <div class="mt-2 text-center">
                             <small class="amount">Total Sale amounts</small>
                             <p class="all-amounts">{{ number_format($total[0]->total) }} Ks</p>
                        </div>

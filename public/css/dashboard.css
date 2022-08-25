@@ -110,7 +110,7 @@
 .date-blog{
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    /* align-items: center; */
 }
 
 .custom-date{
@@ -135,9 +135,9 @@
 }
 
 .all-amounts{
-    font-size: var(--fs6);
+    font-size: var(--fs4);
     color: var(--text-color2);
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 th{
@@ -147,7 +147,7 @@ th{
 
 td{
     color : var(--table-color);
-    border-bottom: dotted;
+    
     font-size: var(--fs3);
     /* border-style: dotted; */
 }

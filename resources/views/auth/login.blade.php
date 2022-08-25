@@ -27,20 +27,29 @@
 
                         <div class="sub-image m-5">
                             <div class="sub1">
-                                <img src="{{ url('image/image 1.png') }}" alt="" class="subimages">
-                            </div>
-
-                            <div class="sub1">
-                                <img src="{{ url('image/image 3.jpg') }}" alt="" class="subimages">
-                            </div>
-
-                            <div class="sub1">
-                                <img src="{{ url('image/image 4.png') }}" alt="" class="subimages">
-                            </div>
-
-                            <div class="sub1">
                                 <img src="{{ url('image/image 5.png') }}" alt="" class="subimage1">
                             </div>
+
+                            <div class="sub1">
+                                <img src="{{ url('image/Gekko Logo.jpg') }}" alt="" class="subimages">
+                            </div>
+
+                            <div class="sub1">
+                                <img src="{{ url('image/Bar Boon Coffee.jpg') }}" alt="" class="subimages">
+                            </div>
+
+                            <div class="sub1 mt-3">
+                                <img src="{{ url('image/image 1.png') }}" alt="" class="subimage1 ">
+                            </div>
+                            <div class="sub1 mt-3">
+                                <img src="{{ url('image/Asiatico Pub Negative.png') }}" alt="" class="subimages">
+                            </div>
+                            <div class="sub1 mt-3">
+                                <img src="{{ url('image/The Peak Negative.png') }}" alt="" class="subimage3">
+                            </div>
+                           
+
+                            
 
                           
                         </div>
@@ -51,7 +60,7 @@
                  <div class="container blogs">
                 <div class="form-containers">
                     <div class="imageblog">
-                        <img src="{{ url('image/image 1.png') }}" alt="logo" class="images">
+                        <img src="{{ url('image/Edge.jpg') }}" alt="logo" class="images">
                     </div>
                     <div class="form-container mt-4">
                         <form action="/admin" method="POST" class="forms">

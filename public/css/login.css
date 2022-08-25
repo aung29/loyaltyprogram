@@ -15,8 +15,8 @@
 }
 
 .imageblog{
-    width: 32% !important;
-    height: 32% !important;
+    width: 40% !important;
+    height: 40% !important;
     margin :auto;
     text-align: center;
     
@@ -37,7 +37,7 @@
 
 
 .images{
-    border-radius: 50%;
+    /* border-radius: 50%; */
     width: 90%;
     height: 90%;
 }
@@ -114,10 +114,18 @@ label{
 
 }
 
+.subimage3{
+    width: 80%;
+    height: 90%;
+    border-radius: 50%;
+    /* border: 2px solid white; */
+}
 
 .subimage1,.subimage2{
     width: 70%;
     height: 80%;
+     /* border : 1px solid white; */
+    border-radius: 50%;
 
 }
 
