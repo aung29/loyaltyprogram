@@ -44,7 +44,7 @@
                             <div class="sub1 mt-3">
                                 <img src="{{ url('image/Asiatico Pub Negative.png') }}" alt="" class="subimages">
                             </div>
-                            <div class="sub1 mt-3">
+                            <div class="sub2 mt-3">
                                 <img src="{{ url('image/The Peak Negative.png') }}" alt="" class="subimage3">
                             </div>
                            
