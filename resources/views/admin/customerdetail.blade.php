@@ -60,24 +60,26 @@
 
                     <div class="row">
                         <div class="d-flex justify-content-between btm">
-                            <div class="rank">
+                           
                             @for ($i = 0; $i < count($ref); $i++)
                             @if (  $ref[$i]->kyat_from >=$result->total_amount ||$ref[$i]->kyat_from <= $result->total_amount && $ref[$i]->kyat_to >= $result->total_amount )
+                            <div class="rank">
                             <span class="ranks">Rank</span>  <span class="reachrank">{{ $ref[$i+1]->program_name ??  $ref[$i]->program_name; }} -You need <span> {{ number_format($ref[$i]->kyat_to - $result->total_amount)}} Ks </span> points to rank up</span>
 
                             </div>
                             <div class="quantity">
                             <span class="">{{ number_format($result->total_amount) }} /  </span><span> {{ number_format($ref[$i]->kyat_to) }} </span>
-                                </div>
                             </div>
+                            
                     
-                        </div>
+                       
 
                         <div class="row">
                             <div class="rank">
                                 <span class="ranks">Next Rank</span>  <span class="club">{{ $ref[$i+1]->program_name ?? $ref[$i]->program_name; }}</span>
                              
                             </div>
+                        </div>
                             @break
                             @endif
                             @endfor
@@ -86,7 +88,7 @@
                       
 
 
-                    
+                        </div>
                     
                     </div>
 

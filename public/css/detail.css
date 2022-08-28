@@ -42,6 +42,7 @@ body{
     border-bottom: 1px solid var(--text-color3);
 }
 .btm{
+    /* flex-direction: column; */
     border-bottom: 1px solid var(--text-color3);
 }
 .rank{

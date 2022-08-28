@@ -73,7 +73,7 @@ class TransactionController extends Controller
        
         $reference = new M_Membership_Program();
         $member   = $reference->reference();
-        // if($member == null) abort(404);
+        if($member == null) abort(404);
         
         
         $transaction  = new M_Transaction();

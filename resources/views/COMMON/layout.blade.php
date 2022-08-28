@@ -103,7 +103,7 @@
                        
                             <ul class="nav nav-pills flex-column mb-auto">
                                 {{-- <li class="nav-item dh "> <a href="/dashboard" class="nav-link dh">Dashboard</a> </li>
-                                <li class="small">Insight</li>
+                                {{-- <li class="small">Insight</li>
                                 <li class="nav-item ana"><a href="/analytics" class="nav-link ana">Analytics</a></li> --}}
                                 <li class="small">sales</li>
                                 <li class="nav-item sal"><a href="/sale" class="nav-link sal">Sales</a></li>

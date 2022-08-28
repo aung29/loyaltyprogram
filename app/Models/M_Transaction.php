@@ -61,7 +61,7 @@ class M_Transaction extends Model
         ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name','m_membership_program.note','m_ad_shop.shop_name')
         ->where('m_transaction.card_id',$id)
         ->where('m-card.active',1)
-        ->where('m_membership_program.active',1)
+        // ->where('m_membership_program.active',1)
         ->paginate(10);
 
         return $specificData;
@@ -77,7 +77,7 @@ class M_Transaction extends Model
         ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name','m_membership_program.note')
         ->where('m_transaction.card_id',$id)
         ->where('m-card.active',1)
-        ->where('m_membership_program.active',1)
+        // ->where('m_membership_program.active',1)
         ->get();
 
         return $specificData;
