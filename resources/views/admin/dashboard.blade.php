@@ -49,7 +49,7 @@
                       @else
 
                       <div class="m-2 cart1">
-                        <div class="card-title mx-4 title">Silver Member</div>
+                        <div class="card-title mx-4 title">VIP Member</div>
                         <div class="mt-4 mx-4">
                             <div class="numblog">
                                 0
@@ -62,33 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="m-2 cart2">
-                        <div class="card-title mx-4 title">Gold Member</div>
-                        <div class="mt-4 mx-4">
-                            <div class="numblog">
-                                0
-                            </div>
-                            <p class="customer">Total Customer</p>
-                        </div>
-                        <div class="mx-4">
-                            <div class="total">0  Ks</div>
-                            <p class="income mb-1">Total Incomes</p>
-                        </div>
-                    </div>
-
-                    <div class="m-2 cart3">
-                        <div class="card-title mx-4 title">Platinum Member</div>
-                        <div class="mt-4 mx-4">
-                            <div class="numblog">
-                                0
-                            </div>
-                            <p class="customer">Total Customer</p>
-                        </div>
-                        <div class="mx-4">
-                            <div class="total">0  Ks</div>
-                            <p class="income mb-1">Total Incomes</p>
-                        </div>
-                    </div>
+                   
                       @endif
 
                    
@@ -129,7 +103,7 @@
                            <tbody>
                               @php
                                 $count = 0;    
-                                $totalCount =count($dash[0]) + count($dash[1])+ count($dash[2])+ count($dash[3]);
+                                $totalCount =count($dash[0]) + count($dash[1])+ count($dash[2])+ count($dash[3]) + count($dash[4]) + count($dash[5]);
                               @endphp
                             @forelse ($dash[0] as $result)
                                
@@ -163,9 +137,9 @@
                           
                             
                         
-                     @empty
+                            @empty
                         
-                     @endforelse
+                            @endforelse
 
                      <tr class="blank_row">
                         <td class="norow" colspan="4"></td>
@@ -208,6 +182,48 @@
        @empty
            
        @endforelse
+
+       <tr class="blank_row">
+        <td class="norow" colspan="4"></td>
+    </tr>
+
+     @forelse ($dash[4] as $result)
+               
+                  
+     <tr>
+      <td>{{ $result->shop_name }}</td>
+      <td>{{ $result->program_name }}</td>
+      <td class="text-center">{{ $result->counts }}</td>
+      <td class="text-end">{{ $result->total }}</td>
+   </tr>
+
+   
+    
+ 
+@empty
+
+@endforelse
+
+<tr class="blank_row">
+    <td class="norow" colspan="4"></td>
+</tr>
+
+ @forelse ($dash[5] as $result)
+           
+              
+ <tr>
+  <td>{{ $result->shop_name }}</td>
+  <td>{{ $result->program_name }}</td>
+  <td class="text-center">{{ $result->counts }}</td>
+  <td class="text-end">{{ $result->total }}</td>
+</tr>
+
+
+
+
+@empty
+
+@endforelse
 
                             
                            </tbody>

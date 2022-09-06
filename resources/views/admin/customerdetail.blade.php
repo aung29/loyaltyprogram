@@ -52,9 +52,12 @@
                     
                     <div class="row">
                         <div class="amount">
-                            <span class="amounts">Amount</span>  <span class="kyats">{{ number_format($result->total_amount) }} Ks</span>
+                            <span class="amounts">Total Amount</span>  <span class="kyats">{{ number_format($result->total_amount) }} Ks</span>
                          
+                            {{-- <span class="mx-3 amounts">Discount Amount</span> <span class="kyats">{{ number_format($result->dicount_amount) }}Ks</span> --}}
                         </div>
+
+                       
                     
                     </div>
 
@@ -62,9 +65,9 @@
                         <div class="d-flex justify-content-between btm">
                            
                             @for ($i = 0; $i < count($ref); $i++)
-                            @if (  $ref[$i]->kyat_from >=$result->total_amount ||$ref[$i]->kyat_from <= $result->total_amount && $ref[$i]->kyat_to >= $result->total_amount )
+                            {{-- @if (  $ref[$i]->kyat_from >=$result->total_amount ||$ref[$i]->kyat_from <= $result->total_amount && $ref[$i]->kyat_to >= $result->total_amount ) --}}
                             <div class="rank">
-                            <span class="ranks">Rank</span>  <span class="reachrank">{{ $ref[$i+1]->program_name ??  $ref[$i]->program_name; }} -You need <span> {{ number_format($ref[$i]->kyat_to - $result->total_amount)}} Ks </span> points to rank up</span>
+                            <span class="ranks">Rank</span>  <span class="reachrank">{{ $ref[$i]->program_name; }} -You need <span> {{ number_format($ref[$i]->kyat_to - $result->total_amount)}} Ks </span> points to exchange cupon</span>
 
                             </div>
                             <div class="quantity">
@@ -74,14 +77,14 @@
                     
                        
 
-                        <div class="row">
+                        {{-- <div class="row">
                             <div class="rank">
                                 <span class="ranks">Next Rank</span>  <span class="club">{{ $ref[$i+1]->program_name ?? $ref[$i]->program_name; }}</span>
                              
                             </div>
-                        </div>
-                            @break
-                            @endif
+                        </div> --}}
+                            {{-- @break --}}
+                            {{-- @endif --}}
                             @endfor
                              
                           
@@ -162,4 +165,8 @@
 
                       
                 </div>
+
+
+
+                          
 @endsection

@@ -93,6 +93,8 @@ tbody tr{
     border-radius: 10px;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
     background: var(--table-color2);
+    
+
 }
 th{
     color: var(--text-color2);
@@ -255,4 +257,13 @@ th{
 
 .btnwidth{
     width: 100%;
+}
+
+.cross {
+    width: 5%;
+    height: 5%;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    background: transparent;
+    border: none;
 }

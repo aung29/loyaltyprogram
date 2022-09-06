@@ -71,6 +71,7 @@
                                     <th>Card ID</th>
                                     <th>Invoice No</th>
                                     <th>Price</th>
+                                    <th>Current Amount</th>
                                     <th>Reference</th>
                                     <th>Date Create</th>
                                 
@@ -78,7 +79,7 @@
                                 <tbody class="confirmdata">
         
                                     <tr class="blank_row">
-                                        <td class="norow" colspan="7"></td>
+                                        <td class="norow" colspan="8"></td>
                                     </tr>
                                    <tr>
                                     <td  class="text-center">1</td>
@@ -87,6 +88,7 @@
                                     <td><input type="text" name="cinvoice" id="cinvoice" class="inputs nobor" readonly></td>
                                     <input type="hidden" name="cprice" id="cprice" class="inputs hidden" >
                                     <td class="cprice"></td>
+                                    <td><input type="text" name="current" id="current" class="inputs nobor" readonly></td>
                                     <td class="membership"></td>
                                     <td class="transactiontime"></td>
         
@@ -146,7 +148,7 @@
                             <div class="input-group mt-3 searchgroup">
 
                                 <button  class="btn searchicon senddata" ><i class="fa-solid fa-magnifying-glass glass"></i></button>
-                                <input type="text" name="search" class="search" id="search"  placeholder="Search with card id.....">
+                                <input type="text" name="search" class="search" id="search"  autocomplete="off" placeholder="Search with card id.....">
                                 
                             </div>
                         </div>

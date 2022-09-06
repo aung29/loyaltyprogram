@@ -139,16 +139,17 @@
                             <th>Date of birth</th>
                             <th>Address</th>
                             <th ></th>
+                            <th></th>
                         
                         </thead>
                         <tbody class="confirmdata">
 
                             <tr class="blank_row">
-                                <td class="norow" colspan="7"></td>
+                                <td class="norow" colspan="8"></td>
                             </tr>
                         @if (count($result) > 0)
                                 @forelse ($result as $item)
-                                    <tr>
+                                    <tr class="alerts">
                                         <td class="text-center">{{ $loop->iteration }}</td>
                                         <td>{{ $item->customer_name }}</td>
                                         <td>{{ $item->card_id }}</td>
@@ -157,6 +158,9 @@
                                         <td>{{ $item->address }}</td>
                                         <td class="text-center"><a href="{{ route('customer.show', $item->id) }}"><button
                                             class="btn btn-outline-light edit" ><i class="bi bi-arrow-right"></i>Detail</button></a></td>
+                                         <td class="text-center">  <button  id="{{ $item->id }}" class="btn btn-outline-danger resets" data-bs-toggle="modal" data-bs-target="#modal">
+                                            Reset
+                                       </button></td>
                                     </tr>
                                 @empty
                                     There is no data
@@ -178,5 +182,29 @@
                     </div>
 
 
+
+                      {{-- start modal --}}
+            <div id="modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="col-sm-4 modal-dialog modal-dialog-centered " role="document">
+                <div class="modal-content">
+                    {{-- <div class="modal-header"> --}}
+
+                    <div class="d-flex justify-content-end ">
+                        <button type="button" class="cross" data-bs-dismiss="modal"
+                            aria-label="Close">&times;</button>
+                    </div>
+                    {{-- </div> --}}
+                    {{-- <div class="modal-body"> --}}
+                    <p class="mx-4"> <span><i class="fas fa-check-circle text-success mx-2"></i></span>Are you sure you want to reset this card amount.</p>
+                    {{-- </div> --}}
+                    <div class="modal-footer">
+                        <a href=""> <button type="button" class="btn btnYes  bg-danger text-light">Yes</button></a>
+                        <button type="button" class="btn btnNo bg-secondary text-light" data-bs-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- end modal --}}
                   
 @endsection

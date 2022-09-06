@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CardValidation;
 use App\Models\M_Card;
 use App\Models\M_Membership_Program;
+use App\Models\M_Reset_Amount;
 use App\Models\M_Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 
 class CardController extends Controller
@@ -58,13 +60,15 @@ class CardController extends Controller
         ]);
       
 
-
+        DB::transaction(function () use ($request) {
         $card = new M_Card();
-     
         
-        $card->saveData($request);
-       
-
+        
+        $cards = $card->saveData($request);
+           
+           $reset  = new M_Reset_Amount();
+           $reset->storeData($cards);
+        });
 
         Log::channel('adminlog')->info("MembershipController", [
             'End Store'

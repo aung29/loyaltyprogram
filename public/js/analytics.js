@@ -83,7 +83,8 @@ chart(data2);
     }
     let count = 1;
     for (const item of data['purchased']) {
-     
+      
+      let amount = numberWithCommas(item['total_amount']);
 
       $('.purchased').append(`
      
@@ -92,6 +93,7 @@ chart(data2);
       <td>${count}</td>
       <td>${item['customer_name']}</td>
       <td>${item['card_id'] }</td>
+      <td>${amount} Ks</td>
       <td>${item['phone'] }</td>
       <td>${item['dob']}</td>
       <td>${item['address']}</td>
@@ -261,3 +263,7 @@ const config = {
       }
     }
   }
+
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}

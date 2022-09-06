@@ -115,6 +115,7 @@
                                     <th class="thbg">No</th>
                                     <th>Customer Name</th>
                                     <th>Card ID</th>
+                                    <th>Total Amount</th>
                                     <th>Phone Number</th>
                                     <th>Date of birth</th>
                                     <th>Address</th>
@@ -122,7 +123,7 @@
 
                                 <tbody class="purchased">
                                     <tr class="blank_row">
-                                        <td class="norow" colspan="6"></td>
+                                        <td class="norow" colspan="7"></td>
                                     </tr>
 
                                     @forelse ($totalamount as $item)
@@ -130,6 +131,7 @@
                                             <td class="text-center">{{ $loop->iteration }}</td>
                                             <td>{{ $item->customer_name }}</td>
                                             <td>{{ $item->card_id }}</td>
+                                            <td>{{ number_format($item->total_amount) }} Ks</td>
                                             <td>{{ $item->phone }}</td>
                                             <td>{{ $item->dob }}</td>
                                             <td>{{ $item->address }}</td>

@@ -20,7 +20,7 @@ class M_Card extends Model
             $shopid =  session('shop');
         }
 
-        Log::critical("hello",['arrive']);
+     
         $membership = new M_Membership_Program();
         $mid = $membership->getFirstMember();
        
@@ -36,6 +36,8 @@ class M_Card extends Model
         $card->shop_id = $shopid;
         $card->active = 1;
         $card->save();
+
+        return $card;
 
     }
 
@@ -76,6 +78,13 @@ class M_Card extends Model
         ->where('m-card.active',1)
         ->update(['m-card.membership_id' => $memberid]);
     }   
+
+    public function resetAmount($id){
+
+        M_Card::where('m-card.id', '=', $id)
+        ->where('m-card.active',1)
+        ->update(['m-card.total_amount' => 0]);
+    }
 
     public function getDataByCardName($name){
 
@@ -231,6 +240,8 @@ class M_Card extends Model
          ON  mc.membership_id = member.id
          WHERE mc.active = 1 "));
 
+
+            Log::critical("message",['result' => $result]);
          return $result;
        
   
@@ -240,7 +251,7 @@ class M_Card extends Model
     public function dashboardData(){
 
         $results = [];
-        for ($i=1; $i <5 ; $i++) { 
+        for ($i=1; $i <7 ; $i++) { 
             $result = DB::select(     
                 DB::raw("SELECT SUM(mc.total_amount) as total,COUNT(mc.card_id) as counts,member.program_name, shop.shop_name
                 FROM `m-card` as mc
@@ -334,6 +345,12 @@ class M_Card extends Model
     {
 
         return $this->hasMany('App\Models\M_Transaction');
+    }
+
+    public function reset()
+    {
+
+        return $this->hasMany('App\Models\M_Reset_Amount');
     }
 
     public function shop()

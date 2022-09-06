@@ -6,6 +6,7 @@ use App\Http\Controllers\CardController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ExportController;
 use App\Http\Controllers\MembershipController;
+use App\Http\Controllers\ResetController;
 use App\Http\Controllers\SaleController;
 use App\Http\Controllers\SearchController;
 use App\Http\Controllers\SettingController;
@@ -74,6 +75,10 @@ Route::group(['middleware' => ['checkAdmin']], function () {
     // Search Member
          Route::post('/searchMembership',[SearchController::class,'searchMember']);
          Route::post('/changeMembership',[SearchController::class,'toggleMembership']);
+        
+
+         // Reset Amount
+         Route::post('/reset',[ResetController::class,'resetAmount']);
          
 
          

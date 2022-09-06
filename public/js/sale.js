@@ -63,18 +63,22 @@ $(document).ready(function () {
                 success : function(data){
                     console.log(data);
                     let ks = ' Ks';
+                    let currentp = numberWithCommas(data.card[0]['total_amount']);
+                    let answer = currentp.concat('',ks);
                     $('.show').show();
                     for (const list of data.card) {
                             $('#cname').val(data.card[0]['customer_name']);
                             $('#ccard').val(data.card[0]['card_id']);
                             $('#cinvoice').val($('#invoice').val());
+                            $('#current').val(answer);
                             $('.membership').text(data.card[0]['program_name']);
                             
                     }
 
                      $('.cprice').text(data.price);
                      let cprice = $('.cprice').text();
-                     let res = cprice.concat('',ks);
+                    let commaprice = numberWithCommas(cprice);
+                     let res = commaprice.concat('',ks);
                      $('.cprice').text(res);
                      $('#cprice').val(data.price);
                    

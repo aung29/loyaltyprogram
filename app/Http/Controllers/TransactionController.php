@@ -24,8 +24,8 @@ class TransactionController extends Controller
         if(session()->has('role')){
             $shopid =  session('shop');
         }
-        $transaction = new M_Transaction();
-         $result  =   $transaction->showData($shopid);
+      $transaction = new M_Transaction();
+      $result  =   $transaction->showData($shopid);
       $count =  $transaction->getCount($shopid);
 
       $card = new M_Card();

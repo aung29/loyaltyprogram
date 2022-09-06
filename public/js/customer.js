@@ -1,6 +1,10 @@
 
+
+let currentId;
+
 $(window).on('load', function(){
     
+    console.log(currentId);
     let message = $('#error').text();
     if( message == "The card is already registered!"){
         window.alert(message);
@@ -73,7 +77,7 @@ $(document).ready(function () {
                     $('.confirmdata').show();
                     $('.confirmdata').append(`
                                 <tr class="blank_row">
-                                <td class="norow" colspan="7"></td>
+                                <td class="norow" colspan="8"></td>
                                 </tr>
                                 `);
                     let count = 1;
@@ -92,6 +96,9 @@ $(document).ready(function () {
                                 <td>${list.address}</td>
                                 <td class="text-center"><a href="customer/${list.id}"><button
                                 class="btn btn-outline-light edit" ><i class="bi bi-arrow-right"></i>Detail</button></a></td>
+                                  <td class="text-center">  <button class="btn btn-outline-danger">
+                                            Reset
+                                       </button></td>
                                 </tr>
                                 `)
                                 count++
@@ -156,7 +163,7 @@ $(document).ready(function () {
                     $('.confirmdata').show();
                     $('.confirmdata').append(`
                                 <tr class="blank_row">
-                                <td class="norow" colspan="7"></td>
+                                <td class="norow" colspan="8"></td>
                                 </tr>
                                 `);
                     let count = 1;
@@ -175,6 +182,9 @@ $(document).ready(function () {
                                  <td>${list.address}</td>
                                  <td class="text-center"><a href="customer/${list.id}"><button
                                  class="btn btn-outline-light edit" ><i class="bi bi-arrow-right"></i>Detail</button></a></td>
+                                 <td class="text-center">  <button class="btn btn-outline-danger">
+                                 Reset
+                            </button></td>
                                  </tr>
                                 `)
                                 count++
@@ -239,7 +249,7 @@ $(document).ready(function () {
                   $('.confirmdata').show();
                   $('.confirmdata').append(`
                               <tr class="blank_row">
-                              <td class="norow" colspan="7"></td>
+                              <td class="norow" colspan="8"></td>
                               </tr>
                               `);
                   let count = 1;
@@ -258,6 +268,9 @@ $(document).ready(function () {
                               <td>${list.address}</td>
                               <td class="text-center"><a href="customer/${list.id}"><button
                               class="btn btn-outline-light edit" ><i class="bi bi-arrow-right"></i>Detail</button></a></td>
+                              <td class="text-center">  <button class="btn btn-outline-danger">
+                              Reset
+                         </button></td>
                               </tr>
                               `)
                               count++
@@ -284,5 +297,47 @@ $(document).ready(function () {
           
             
         })
+
+        $('.resets').click(function(){
+
+            currentId = this.id;
+            console.log(currentId);
+            
+        })
+
+
+        $('.btnNo').click(function(){
+
+            currentId = 0;
+            console.log(currentId);
+        });
+
+        $('.btnYes').click(function(e){
+          
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-TOKEN": jQuery('meta[name="csrf-token"]').attr(
+                        "content"
+                    ),
+                },
+            })
+
+            let formdata = {
+                id : currentId
+            }
+            console.log(formdata);
+            $.ajax({
+                type: "POST",
+                url: "reset",
+                data: formdata,
+                dataType: "json",
+                success : function(data){
+                    console.log(data);
+                },
+                error : function(data){
+                    console.log(data);
+                }
+            });
+        });
 
 });

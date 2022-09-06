@@ -23,8 +23,8 @@ class DashboardController extends Controller
        
         
          $card = new M_Card();
-         $cardResult = $card->groupDataByMember($today);
-        $total   = $card->totalAmount($today);    
+         $cardResult = $card->groupDataByMember();
+        $total   = $card->totalAmount();    
          $dashboard  = $card->dashboardData();
 
          $member = new M_Membership_Program();
@@ -32,7 +32,7 @@ class DashboardController extends Controller
         
 
 
-        Log::critical("message",['card' => $total]);
+        // Log::critical("message",['card' => $total]);
         return view('admin.dashboard',['date' => $today,'cardResult' => $cardResult,'ref' => $reference,'total' => $total,'dash' => $dashboard]);
 
     }

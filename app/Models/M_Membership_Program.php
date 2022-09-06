@@ -185,13 +185,13 @@ class M_Membership_Program extends Model
     public function reference(){
 
 
-        if(session()->has('shop')){
-            $shopid =  session('shop');
+        // if(session()->has('shop')){
+        //     $shopid =  session('shop');
             
-        }
+        // }
         $reference = DB::table('m_membership_program')
         ->select('*')
-        ->where('m_membership_program.shop_id',$shopid)
+        // ->where('m_membership_program.shop_id',$shopid)
         ->where('m_membership_program.active', 1)
         ->get();
 
