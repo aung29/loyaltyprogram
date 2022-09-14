@@ -46,7 +46,7 @@
             
 
             <div class="account">
-                <p class="admin">Admin</p>
+                <p class="admin">{{ session('name') }}</p>
                 <a href="/logout">
                     <i class="fa-solid fa-power-off icons"></i>
                 </a>
@@ -92,7 +92,7 @@
             
 
             <div class="account">
-                <p class="admin">Admin</p>
+                <p class="admin">{{ session('name') }}</p>
                 <a href="/logout">
                     <i class="fa-solid fa-power-off icons"></i>
                 </a>
@@ -106,16 +106,19 @@
                     <div class="col-lg-2 col-md-2  sides on">
                        
                             <ul class="nav nav-pills flex-column mb-auto">
-                                {{-- <li class="nav-item dh "> <a href="/dashboard" class="nav-link dh">Dashboard</a> </li>
-                                {{-- <li class="small">Insight</li>
-                                <li class="nav-item ana"><a href="/analytics" class="nav-link ana">Analytics</a></li> --}}
+                                {{-- <li class="nav-item dh "> <a href="/dashboard" class="nav-link dh">Dashboard</a> </li> -}}
+                                 <li class="small">Insight</li>  
+                                <li class="nav-item ana"><a href="/analytics" class="nav-link ana">Analytics</a></li>  --}}
+                                {{--  <li class="small">Insight</li> 
+                                <li class="nav-item ana"><a href="/analytics" class="nav-link ana">Analytics</a></li>   --}}
                                 <li class="small">sales</li>
                                 <li class="nav-item sal"><a href="/sale" class="nav-link sal">Sales</a></li>
                                 <li class="nav-item cu"><a href="/customer" class="nav-link cu">Customer</a></li>
                                 <li class="small">report</li>
                                 <li class="nav-item ex"><a href="/export" class="nav-link ex">Export</a></li>
                                 <li class="small">management</li>
-                                <li class="nav-item me"><a href="/membership" class="nav-link me">Membership</a></li>
+                                {{--  <li class="nav-item me"><a href="/membership" class="nav-link me">Membership</a></li>  --}}
+                                <li class="nav-item se"><a href="/setting" class="nav-link se">Setting</a></li>
                                 {{-- <li class="nav-item se"><a href="/setting" class="nav-link se">Setting</a></li> --}}
                             </ul>
                         </div>
@@ -139,7 +142,7 @@
             
 
             <div class="account">
-                <p class="admin">Admin</p>
+                <p class="admin">{{ session('name') }}</p>
                 <a href="/logout">
                     <i class="fa-solid fa-power-off icons"></i>
                 </a>

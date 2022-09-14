@@ -18,14 +18,25 @@ class CardExport implements FromCollection,WithHeadings,WithColumnWidths,WithSty
     public function collection()
     {
 
-        if(session()->has('role')){
+        
+
+        if (session()->has('role')) {
             $shopid =  session('shop');
+            if (session('role') == 'SA') {
+                $count = DB::table('m-card')
+                ->select('m-card.customer_name','m-card.card_id','m-card.phone','m-card.dob','m-card.address')
+                ->where('m-card.active',1)
+                // ->where('m-card.shop_id',$shopid)
+                ->get();
+            }else{
+                $count = DB::table('m-card')
+                ->select('m-card.customer_name','m-card.card_id','m-card.phone','m-card.dob','m-card.address')
+                ->where('m-card.active',1)
+                ->where('m-card.shop_id',$shopid)
+                ->get();
+            }
         }
-        $count = DB::table('m-card')
-        ->select('m-card.customer_name','m-card.card_id','m-card.phone','m-card.dob','m-card.address')
-        ->where('m-card.active',1)
-        ->where('m-card.shop_id',$shopid)
-        ->get();
+       
 
         return $count;
     }

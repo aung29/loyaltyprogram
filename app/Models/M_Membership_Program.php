@@ -26,7 +26,7 @@ class M_Membership_Program extends Model
         ]);
 
         if(session()->has('name')){
-            $shopid =  session('shop');
+           
             $name = session('name');
         }
        
@@ -39,7 +39,7 @@ class M_Membership_Program extends Model
         $membership->end_date = $request->input('eddate');
         $membership->note = $request->has('note') ? $request->input('note') : 'empty';
         $membership->active = 1;
-        $membership->shop_id = $shopid;
+        $membership->shop_id = 1;
         $membership->created_by = $name;
         $membership->save();
 
@@ -69,7 +69,7 @@ class M_Membership_Program extends Model
 
            $pglist = DB::table('m_membership_program')
             ->select('*', DB::raw('m_membership_program.id AS pid'))
-            ->where('m_membership_program.shop_id',$shopid)
+            // ->where('m_membership_program.shop_id',$shopid)
             
             ->paginate(10);
             
@@ -105,7 +105,7 @@ class M_Membership_Program extends Model
         ]);
 
         if(session()->has('name')){
-            $shopid =  session('shop');
+            // $shopid =  session('shop');
             $name = session('name');
         }
         $membership =  M_Membership_Program::find($id);
@@ -118,7 +118,7 @@ class M_Membership_Program extends Model
         $membership->end_date = $request->input('eddate');
         $membership->note = $request->has('note') ? $request->input('note') : 'empty';
         $membership->active = 1;
-        $membership->shop_id = $shopid;
+        // $membership->shop_id = $shopid;
         $membership->created_by = $name;
         $membership->save();
 
@@ -154,12 +154,9 @@ class M_Membership_Program extends Model
     public function getFirstMember(){
 
 
-        if(session()->has('shop')){
-            $shopid =  session('shop');
-            
-        }
+
        $id = DB::table('m_membership_program')
-        ->where('m_membership_program.shop_id',$shopid)
+        ->where('m_membership_program.shop_id',1)
         ->first();
 
         return $id;

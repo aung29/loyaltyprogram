@@ -36,7 +36,7 @@ $(document).ready(function () {
     $('#username1').change(function(e){
         e.preventDefault();
      
-
+        
         $.ajaxSetup({
            headers: {
                "X-CSRF-TOKEN": jQuery('meta[name="csrf-token"]').attr(
@@ -90,7 +90,7 @@ $(document).ready(function () {
                                <td>${list.customer_name}</td>
                                <td>${list.card_id}</td>
                                <td>${invoice}</td>
-                               <td>${amount}</td>
+                               <td>${amount} Ks</td>
                                <td>${list.program_name}</td>
                                <td>${list.transaction_date}</td>
                                </tr>
@@ -261,7 +261,7 @@ $(document).ready(function () {
                               <td>${list.customer_name}</td>
                               <td>${list.card_id}</td>
                               <td>${invoice}</td>
-                              <td>${amount}</td>
+                              <td>${amount} Ks</td>
                               <td>${list.program_name}</td>
                               <td>${list.transaction_date}</td>
                               </tr>

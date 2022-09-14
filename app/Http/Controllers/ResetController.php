@@ -18,7 +18,7 @@ class ResetController extends Controller
         DB::transaction(function () use ($request) {
             
             $cards = new M_Card();
-            $card = $cards->getDataById($request->input('id'));
+            $card = $cards->resetById($request->input('id'));
      
              
                   $reset   = new M_Reset_Amount();

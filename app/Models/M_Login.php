@@ -34,12 +34,33 @@ class M_Login extends Model
 
     public function showData(){
 
-        $LoginList = DB::table('m_ad_login')
+
+        if(session()->has('name')){
+            $name = session('name');
+            $shop = session('shop');
+            $role = session(('role'));
+        }
+
+        if($role == 'SA'){
+        $collection = DB::table('m_ad_login')
         ->select('*')
        
         ->get();
+
+        return $collection;
+        }else{
+           
+            $count = M_Login::count();
+    
+            
+             $collection = DB::table('m_ad_login')->where('m_ad_login.shop_id',$shop)->get();
+            
+            return $collection;
+        }
+       
+     
         
-        return $LoginList;
+       
     }
 
     public function getDataById($id){

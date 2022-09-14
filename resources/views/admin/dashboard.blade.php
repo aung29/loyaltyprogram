@@ -103,9 +103,9 @@
                            <tbody>
                               @php
                                 $count = 0;    
-                                $totalCount =count($dash[0]) + count($dash[1])+ count($dash[2])+ count($dash[3]) + count($dash[4]) + count($dash[5]);
+                                $totalCount =count($dash[1]) + count($dash[2])+ count($dash[3])+ count($dash[4]) + count($dash[5]) + count($dash[6]);
                               @endphp
-                            @forelse ($dash[0] as $result)
+                            @forelse ($dash[1] as $result)
                                
                                   
                                    <tr>
@@ -125,7 +125,7 @@
                                 <td class="norow" colspan="4"></td>
                             </tr>
                               
-                            @forelse ($dash[1] as $result)
+                            @forelse ($dash[2] as $result)
                                
                                   
                             <tr>
@@ -145,7 +145,7 @@
                         <td class="norow" colspan="4"></td>
                     </tr>
 
-                     @forelse ($dash[2] as $result)
+                     @forelse ($dash[3] as $result)
                                
                                   
                      <tr>
@@ -167,7 +167,7 @@
                             </tr>
 
 
-              @forelse ($dash[3] as $result)
+              @forelse ($dash[4] as $result)
                                
                                   
               <tr>
@@ -187,7 +187,7 @@
         <td class="norow" colspan="4"></td>
     </tr>
 
-     @forelse ($dash[4] as $result)
+     @forelse ($dash[5] as $result)
                
                   
      <tr>
@@ -208,7 +208,7 @@
     <td class="norow" colspan="4"></td>
 </tr>
 
- @forelse ($dash[5] as $result)
+ @forelse ($dash[6] as $result)
            
               
  <tr>

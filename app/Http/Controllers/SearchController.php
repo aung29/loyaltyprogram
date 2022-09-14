@@ -136,7 +136,7 @@ class SearchController extends Controller
 
         
         $card =new M_Card();
-        $anaData = $card->getAnalyticsData($request->input('data'));
+        $anaData = $card->searchAnalyticsData($request->input('data'));
       
         $members = $card->membershipCount($request->input('data'));
         $purchased    = $card->mostpurchasedData($request->input('data'));

@@ -94,7 +94,7 @@ label{
    padding: 0.2rem;
    border: 1px solid rgba(0, 0, 0, 0.13) ;
    color: var(--text-color3);
-   font-size: 1rem;
+   font-size: 0.8rem;
    
 }
 #search::placeholder{
@@ -116,7 +116,7 @@ table{
 }
 .tablebg{
     background: var(--table-color2) !important;
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--table-text-color);
    
 }
@@ -155,6 +155,7 @@ tr{
 }
 
 td{
+    font-size: 0.9rem;
     border: none !important;
    font-weight: bold;  
    color: rgba(4, 4, 2, 0.47) !important;
@@ -164,6 +165,9 @@ td{
     width: 150px !important;
     color : var(--text-color);
     background: #97C0EA !important;
+}
+th{
+    color: var(--text-color2);
 }
 
 .items{
@@ -180,6 +184,6 @@ td{
 .excels{
     text-decoration: none;
     color: var(--text-color3);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
 }

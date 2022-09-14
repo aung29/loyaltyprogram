@@ -65,7 +65,7 @@
 
 .tablebg{
     background: var(--table-color2) !important;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--table-text-color);
    
 }
@@ -223,6 +223,6 @@ th{
 .excels{
     text-decoration: none;
     color: var(--text-color3);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
 }

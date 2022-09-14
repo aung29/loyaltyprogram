@@ -41,7 +41,7 @@ class M_Transaction extends Model
         ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id' )
         ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
         ->where('m-card.active',1)
-        ->where('m-card.shop_id',$shopid)
+        // ->where('m-card.shop_id',$shopid)
         ->orderBy('m_transaction.id','DESC')
         
         ->paginate(10);
@@ -58,7 +58,7 @@ class M_Transaction extends Model
         ->join('m-card', 'm_transaction.card_id', '=', 'm-card.id')
         ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id' )
         ->join('m_ad_shop','m_ad_shop.id','=','m-card.shop_id')
-        ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name','m_membership_program.note','m_ad_shop.shop_name')
+        ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name','m_membership_program.note')
         ->where('m_transaction.card_id',$id)
         ->where('m-card.active',1)
         // ->where('m_membership_program.active',1)
@@ -77,7 +77,7 @@ class M_Transaction extends Model
         ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name','m_membership_program.note')
         ->where('m_transaction.card_id',$id)
         ->where('m-card.active',1)
-        // ->where('m_membership_program.active',1)
+       
         ->get();
 
         return $specificData;
@@ -93,7 +93,7 @@ class M_Transaction extends Model
         ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id' )
         ->select('m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
         ->where('m-card.active',1)
-        ->where('m-card.shop_id',$shopid)
+        // ->where('m-card.shop_id',$shopid)
      
         ->get();
 
@@ -106,13 +106,15 @@ class M_Transaction extends Model
             $shopid =  session('shop');
         }
 
+
+        
         $transList= DB::table('m_transaction')
         ->join('m-card', 'm_transaction.card_id', '=', 'm-card.id')
         ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id' )
         ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
         ->where('m-card.card_id','Like','%'.$request.'%')
         ->where('m-card.active',1)
-        ->where('m-card.shop_id',$shopid)
+        // ->where('m-card.shop_id',$shopid)
       
         ->orderBy('m_transaction.id','DESC')
         ->get();
@@ -154,7 +156,7 @@ class M_Transaction extends Model
         ->select('m_transaction.id','m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_transaction.transaction_date','m_membership_program.program_name')
         ->where('m-card.id',$id)
         ->where('m-card.active',1)
-        ->where('m-card.shop_id',$shopid)
+        // ->where('m-card.shop_id',$shopid)
         ->orderBy('m_transaction.id','DESC')
         ->get();
 
@@ -175,7 +177,7 @@ class M_Transaction extends Model
         ->where('m-card.membership_id',$id)
         ->where('m-card.active',1)
         ->where('m_membership_program.active',1)
-        ->where('m-card.shop_id',$shopid)
+        // ->where('m-card.shop_id',$shopid)
        
         ->orderBy('m_transaction.id','DESC')
         ->get();
@@ -200,7 +202,7 @@ class M_Transaction extends Model
             ORDER BY shop.id"));
         
       
-
+            // dd($result);
         return $result;
         
     }

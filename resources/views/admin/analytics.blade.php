@@ -27,7 +27,9 @@
                    <div class="container">
                         <div class="d-flex justify-content-end m-3">
                             <select name="shop" id="shop" class="shop">
+                                <option value="" selected disabled>Select Shop</option>
                               @forelse ($shops as $item)
+                                
                               <option value="{{ $item->id }}" >{{ $item->shop_name }}</option>
                              
                               @empty
@@ -87,7 +89,7 @@
                             </div>
                         </div>
 
-                            <p class="register mt-3">Active</p>
+                            {{--  <p class="register mt-3">Active</p>
                             <div class="bor-dash">
                             <div class="container-fluid mx-3">
                                     <div class="row mx-5 collect">
@@ -104,13 +106,13 @@
                                        
                                     </div>
                             </div>
-                            </div>
+                            </div>  --}}
                            
 
 
                             <p class="mt-3 ">Most purchased Customers</p>
                             <div class="table-wrapper-scroll-y my-custom-scrollbar">
-                            <table class="table table-striped">
+                            <table class="table table-striped table-sm  tablefont">
                                 <thead class="tablebg">
                                     <th class="thbg">No</th>
                                     <th>Customer Name</th>
@@ -137,7 +139,7 @@
                                             <td>{{ $item->address }}</td>
                                         </tr>
                                     @empty
-                                        Still no user yet!!
+                                        
                                     @endforelse
                                    
                                 </tbody>

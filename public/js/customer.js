@@ -299,7 +299,7 @@ $(document).ready(function () {
         })
 
         $('.resets').click(function(){
-
+            
             currentId = this.id;
             console.log(currentId);
             
@@ -313,7 +313,7 @@ $(document).ready(function () {
         });
 
         $('.btnYes').click(function(e){
-          
+        //   e.preventDefault();
             $.ajaxSetup({
                 headers: {
                     "X-CSRF-TOKEN": jQuery('meta[name="csrf-token"]').attr(

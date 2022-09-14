@@ -106,7 +106,7 @@ body{
 
 .tablebg{
     background: var(--table-color2);
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--table-text-color);
    
 }
@@ -144,7 +144,9 @@ tr{
     text-align: center;
 }
 
-
+th{
+    color: var(--text-color2);
+}
 .table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
     background-color: rgba(166, 177, 241, 0.37);
     

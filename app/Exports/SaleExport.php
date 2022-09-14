@@ -28,7 +28,7 @@ class SaleExport implements FromCollection,WithHeadings,WithColumnWidths,WithSty
         ->select('m-card.customer_name','m-card.card_id','m_transaction.invoice','m_transaction.amount','m_membership_program.program_name','m_transaction.transaction_date')
         ->where('m-card.active',1)
         ->where('m_membership_program.active',1)
-        ->where('m_transaction.created_by_id',$createid)
+        // ->where('m_transaction.created_by_id',$createid)
         ->orderBy('m_transaction.id','DESC')
         ->get();
 

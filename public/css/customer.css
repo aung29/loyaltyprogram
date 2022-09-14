@@ -60,12 +60,12 @@
     background: var(--table-color2);
     border: none;
     width:150px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     
 }
 .tablebg{
     background: var(--table-color2) !important;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     color: var(--table-text-color);
    
 }
@@ -184,7 +184,7 @@ th{
     padding: 0.2rem;
     border: 1px solid rgba(0, 0, 0, 0.13) ;
     color: var(--text-color3);
-    font-size: 1rem;
+    font-size: 0.8rem;
     
 }
 #search::placeholder{
@@ -251,7 +251,7 @@ th{
 .excels{
     text-decoration: none;
     color: var(--text-color3);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
 }
 

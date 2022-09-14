@@ -6,7 +6,7 @@ $(document).ready(function () {
 
 
   
-let data2 = [0,0,0,0];
+let data2 = [0,0,0,0,0,0];
 
 datainput(data2);
 chart(data2);
@@ -153,7 +153,7 @@ chart(data2);
           success: function(data){
             $('.card-body').append('<canvas id="mylinechart"></canvas>') ;         
           
-              data2 = [0,0,0,0];
+              data2 = [0,0,0,0,0,0];
               
 
                 for (const item of data) {
@@ -172,6 +172,12 @@ chart(data2);
           
                   if(item['shop_name'] == "Union"){
                     data2[3] = item['total'];
+                  }
+                  if(item['shop_name'] == "Asiatico Pub"){
+                    data2[4] = item['total'];
+                  }
+                  if(item['shop_name'] == "The Peak Bar"){
+                    data2[5] = item['total'];
                   }
                 }
                
@@ -193,8 +199,8 @@ chart(data2);
 
     const ctx = document.getElementById('mylinechart').getContext('2d');
     
-    
-  let label = ['Parami Pizza', 'Gekko' ,'Union' , "Bar Goon"];
+     
+  let label = ['Parami Pizza', 'Gekko' ,'Bar Boon' , "Union" , "Asiatico Pub" , "The Peak Bar"];
 const data = {
     labels: label,
     datasets: [{
@@ -205,8 +211,12 @@ const data = {
         'rgba(115, 135, 249, 1)',
         'rgba(115, 135, 249, 1)',
         'rgba(115, 135, 249, 1)',
+        'rgba(115, 135, 249, 1)',
+        'rgba(115, 135, 249, 1)',
       ],
       borderColor: [
+        'rgba(115, 135, 249, 1)',
+        'rgba(115, 135, 249, 1)',
         'rgba(115, 135, 249, 1)',
         'rgba(115, 135, 249, 1)',
         'rgba(115, 135, 249, 1)',
@@ -246,6 +256,7 @@ const config = {
 
     for (const result of saleDaily) {
        
+      console.log(result);
 
       if(result['shop_name'] == "Parami Pizza"){
         data2[0] = result['total'];
@@ -260,6 +271,13 @@ const config = {
 
       if(result['shop_name'] == "Union"){
         data2[3] = result['total'];
+      }
+
+      if(result['shop_name'] == "Asiatico Pub"){
+        data2[4] = result['total'];
+      }
+      if(result['shop_name'] == "The Peak Bar"){
+        data2[5] = result['total'];
       }
     }
   }

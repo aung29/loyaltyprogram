@@ -16,7 +16,12 @@ class M_Shop extends Model
 
     public function getDataFromShop(){
 
+        $count = M_Shop::count();
+        $skip = 1;
+        $current = $count- $skip;
       $shops =  DB::table('m_ad_shop')
+        ->skip($skip)
+        ->take($current)
         ->get();
 
         return $shops;

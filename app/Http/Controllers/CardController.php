@@ -100,7 +100,7 @@ class CardController extends Controller
 
         $member = new M_Membership_Program();
         $reference = $member->reference();
-       
+        // echo $result;
         return view('admin.customerdetail',['result' => $result,'count' => $count,'result2' => $result2,'ref' => $reference]);
     }
 

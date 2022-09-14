@@ -52,7 +52,7 @@ Route::group(['middleware' => ['checkAdmin']], function () {
         Route::post('/confirm', [SaleController::class, 'confirmData']);
         Route::get('/export',[ExportController::class,'exportData']);
 
-        Route::get('/excel-export1',[ExportController::class,'cardExport']);
+        Route::get('/excel-export1',[ExpoartController::class,'cardExport']);
         Route::get('/excel-export2',[ExportController::class,'saleExport']);
         Route::get('/excel-export3',[ExportController::class,'memberExport']);
         Route::get('/customers/{id}',[ExportController::class,'detailExport']);
