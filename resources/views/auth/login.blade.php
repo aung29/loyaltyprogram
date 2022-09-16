@@ -55,7 +55,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-10 col-sm-10 ">
+                <div class="col-lg-4 col-md-10 col-sm-10 mt-5">
                    
                  <div class="container blogs">
                 <div class="form-containers">
