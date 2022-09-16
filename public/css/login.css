@@ -15,10 +15,11 @@
 }
 
 .imageblog{
-    width: 40% !important;
-    height: 40% !important;
-    margin :auto;
+    width: 199.8404px !important;
+    height: 83px !important;
     text-align: center;
+    /* margin: 102px 151px 68px 151px; */
+      margin : 19px 123px 30px 134px;
     
 }
 
@@ -44,8 +45,9 @@
 .form-containers{
     margin-top: 1rem;
     padding: 1rem;
-    width: 500px;
-    height: 550px;
+    width: 503.4578px;
+    /* height: 554px; */
+    height: 425px;
     border-radius: 20px;
     background-color: var(--bgcolor2); 
     
@@ -66,7 +68,7 @@ label{
 }
 .inputs{
 
-    width: 280px !important;
+    width: 270px !important;
       
 }
 .inputs:focus{
@@ -156,10 +158,11 @@ label{
 }
 
 .imageblog{
-    width: 50% !important;
-    height: 30% !important;
-    margin :auto;
+    width: 199.8404px !important;
+    height: 83px !important;
+    margin :55px 137px 59px 39px;
     text-align: center;
+    /* margin : 19px 123px 47px 134px; */
     
 }
 

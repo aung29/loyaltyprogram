@@ -60,7 +60,7 @@
                  <div class="container blogs">
                 <div class="form-containers">
                     <div class="imageblog">
-                        <img src="{{ url('image/Edge.jpg') }}" alt="logo" class="images">
+                        <img src="{{ url('image/edge2.png') }}" alt="logo" class="images">
                     </div>
                     <div class="form-container mt-4">
                         <form action="/admin" method="POST" class="forms">
