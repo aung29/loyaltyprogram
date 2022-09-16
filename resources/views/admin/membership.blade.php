@@ -18,9 +18,9 @@
                 <div class="container-fluid   mt-4 mx-2">
                   
                     <div class="d-flex aligns-item-center">
-                                <div class="new ">
+                                {{-- <div class="new ">
                                         Add new
-                                </div>
+                                </div> --}}
                                  <div class="program active">
                                         Membership Program
                                 </div>
@@ -32,7 +32,7 @@
                     </div>
 
                    
-                    
+{{--                     
                       <div class="formmember close">
                         <form action="{{ route('membership.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -94,7 +94,7 @@
                     </div>
                     
                </form>
-                       </div>
+                       </div> --}}
                    
                        <div class="tablemember open">
                          
@@ -159,7 +159,7 @@
                                                     @endif
                                                     <td><a href="{{ route('membership.edit', $item->id) }}"><button
                                                         class="btn btn-outline-light edit" ><i class="bi bi-arrow-right"></i>Edit</button></a> </td>
-                                                    <td>
+                                                    {{-- <td>
                                                         <form action="{{ route('membership.destroy',$item->id) }}" method="POST">
                                                             @csrf
                                                             @method('DELETE')
@@ -167,7 +167,7 @@
                                                                  Delete
                                                             </button>
                                                         </form>
-                                                    </td>
+                                                    </td> --}}
                                                    </tr>
                                                 @empty
                                                     There is no data
