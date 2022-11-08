@@ -29,7 +29,9 @@ class AnalyticsController extends Controller
         $shops  = $shop->getDataFromShop();
 
         $card =new M_Card();
-         $genderCount = $card->getAnalyticsData($shopid);
+        
+            $genderCount = $card->getAnalyticsData($shopid);
+        
             $totalCount =$card->cardCount($shopid);
            $members = $card->membershipCount($shopid);
             $purchased    = $card->mostpurchasedData($shopid);

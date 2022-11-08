@@ -61,11 +61,6 @@ class M_Membership_Program extends Model
             'Start listData'
         ]);
 
-        
-        if(session()->has('shop')){
-            $shopid =  session('shop');
-            
-        }
 
            $pglist = DB::table('m_membership_program')
             ->select('*', DB::raw('m_membership_program.id AS pid'))

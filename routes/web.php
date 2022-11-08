@@ -36,15 +36,15 @@ Route::group(['middleware' => ['checkAdmin']], function () {
     Route::group(['middleware' => ['checkadminRole']], function () {
         Route::get('/dashboard',[DashboardController::class,'index']);
 
-        Route::get('/analytics',[AnalyticsController::class,'index']);
-
-       
-        Route::post('/searchDaily',[SearchController::class,'searchDailyData']);
-        Route::post('/searchAnalytics',[SearchController::class,'searchAnalytics']);
+        
        
 
         });
+        Route::get('/analytics',[AnalyticsController::class,'index']);
+        Route::post('/searchDaily',[SearchController::class,'searchDailyData']);
+        Route::post('/searchAnalytics',[SearchController::class,'searchAnalytics']);
 
+        
         Route::resource('/sale', TransactionController::class);
         Route::resource('/customer', CardController::class);
         Route::resource('/membership', MembershipController::class);
@@ -52,7 +52,7 @@ Route::group(['middleware' => ['checkAdmin']], function () {
         Route::post('/confirm', [SaleController::class, 'confirmData']);
         Route::get('/export',[ExportController::class,'exportData']);
 
-        Route::get('/excel-export1',[ExpoartController::class,'cardExport']);
+        Route::get('/excel-export1',[ExportController::class,'cardExport']);
         Route::get('/excel-export2',[ExportController::class,'saleExport']);
         Route::get('/excel-export3',[ExportController::class,'memberExport']);
         Route::get('/customers/{id}',[ExportController::class,'detailExport']);

@@ -35,7 +35,7 @@
                   
                 </div>
                 <div class="label mx-2">
-                    Membership Managment
+                    Membership Management
                 </div>
 
                 <div class="icon2 mx-3">
@@ -109,8 +109,8 @@
                                 {{-- <li class="nav-item dh "> <a href="/dashboard" class="nav-link dh">Dashboard</a> </li> -}}
                                  <li class="small">Insight</li>  
                                 <li class="nav-item ana"><a href="/analytics" class="nav-link ana">Analytics</a></li>  --}}
-                                {{--  <li class="small">Insight</li> 
-                                <li class="nav-item ana"><a href="/analytics" class="nav-link ana">Analytics</a></li>   --}}
+                                 <li class="small">Insight</li> 
+                                <li class="nav-item ana"><a href="/analytics" class="nav-link ana">Analytics</a></li>  
                                 <li class="small">sales</li>
                                 <li class="nav-item sal"><a href="/sale" class="nav-link sal">Sales</a></li>
                                 <li class="nav-item cu"><a href="/customer" class="nav-link cu">Customer</a></li>

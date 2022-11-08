@@ -119,12 +119,12 @@ class M_Card extends Model
             ->update(['m-card.membership_id' => $memberid]);
     }
 
-    public function resetAmount($id)
+    public function resetAmount($id,$carrierMoney)
     {
 
         M_Card::where('m-card.id', '=', $id)
             ->where('m-card.active', 1)
-            ->update(['m-card.total_amount' => 0]);
+            ->update(['m-card.total_amount' => $carrierMoney]);
     }
 
     public function getDataByCardName($name)
@@ -422,7 +422,7 @@ class M_Card extends Model
                         ORDER BY mc.gender ='male' DESC
                         ")
         );
-        // dd($result);
+        
             return $result;
         // }
                 
@@ -442,14 +442,14 @@ class M_Card extends Model
                         ORDER BY mc.gender ='male' DESC
                         ")
         );
-
+        
         return $result;
     }
     public function membershipCount($shopid)
     {
 
         if (session()->has('role')) {
-            if (session('role') == 'SA') {
+            if (session('role') == 'SA' || session('role') == 'OP') {
                 $result = DB::select(
                     DB::raw(
                         "SELECT SUM(mc.total_amount) as total,COUNT(mc.card_id) as counts,member.program_name as pgname
@@ -480,7 +480,7 @@ class M_Card extends Model
             }
         }
      
-
+        
         return $result;
     }
 

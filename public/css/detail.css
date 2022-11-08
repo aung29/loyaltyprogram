@@ -33,10 +33,16 @@ body{
     font-size: 1rem;
     color: var(--text-color3);
     font-weight: 500;
+    /* white-space: nowrap; */
+}
+
+.cusNam{
+    width: 200px;
 }
 
 .amount{
-
+    display: flex;
+    
     margin-top: 1rem;
     padding: 1rem;
     border-bottom: 1px solid var(--text-color3);
@@ -48,18 +54,20 @@ body{
 .rank{
     margin-top: 1rem;
     padding: 1rem;
+    white-space: nowrap;
 }
 .amounts,.ranks{
   
     margin-left: 0.8rem;
     text-transform: uppercase;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .kyats{
     font-size: var(--fs3);
     color: var(--text-color3);
-    margin-left: 2.9rem;
+    margin-left: 1rem;
     
 }
 
@@ -73,6 +81,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
     font-size: var(--fs3);
     color:var(--text-color3);
 }
@@ -217,13 +226,16 @@ th{
    
      background: var(--bgcolor3);
      color: var(--text-color);
-     /* padding: 0.3rem 0.5rem 0.1rem 0.5rem; */
      border-radius: 5px;
  }
  .totals{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
      margin-top: 1rem;
      margin-left: 1rem;
-     
+     margin-right: 1rem;
+     white-space: nowrap;
  }
 
  .alltotal {
