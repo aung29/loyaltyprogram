@@ -34,6 +34,8 @@ class ResetController extends Controller
             if( $currentAmount  >= $member->kyat_to ){
               $carrierAmount =  $currentAmount - $member->kyat_to;
           
+            }else{
+                $carrierAmount = $currentAmount;
             }
             $newAmount = $lastAmount + $currentAmount;
 
