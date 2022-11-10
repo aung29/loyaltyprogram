@@ -68,6 +68,22 @@ class M_Transaction extends Model
     }
 
 
+    public function getTotalTransaction($id){
+
+
+        $total = DB::table('m_transaction')
+        ->join('m-card', 'm_transaction.card_id', '=', 'm-card.id')
+        ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id' )
+        ->join('m_ad_shop','m_ad_shop.id','=','m-card.shop_id')
+        
+        ->where('m_transaction.card_id',$id)
+        ->where('m-card.active',1)
+        ->sum('m_transaction.amount');
+        
+    
+        return $total;
+        
+    }
     public function getSpecificCount($id){
 
         $specificData = DB::table('m_transaction')

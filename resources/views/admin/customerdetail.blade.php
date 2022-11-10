@@ -202,7 +202,7 @@
 
                        <div class="totalamounts d-flex justify-content-end align-items-center ">
                             <div class="total col-lg-3 col-md-5 col-sm-2 d-flex justify-content-around align-items-center m-3">
-                                <p class="totals ">Total Amounts <span class="alltotal">{{ number_format($result[0]->reset_amount + $result[0]->total_amount)}} Ks</span></p>
+                                <p class="totals ">Total Amounts <span class="alltotal">{{ number_format($result3)}} Ks</span></p>
 
                              
                             </div>

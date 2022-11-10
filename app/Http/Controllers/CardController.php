@@ -95,13 +95,13 @@ class CardController extends Controller
     
     
         $trans = new M_Transaction();
-          $result2 =  $trans->showDataByCardId($id,$shopid);
-        $count  = $trans->getSpecificCount($id,$shopid);
-
+          $result2 =  $trans->showDataByCardId($id);
+        $count  = $trans->getSpecificCount($id);
+            $result3   = $trans->getTotalTransaction($id);
         $member = new M_Membership_Program();
         $reference = $member->reference();
         // echo $result;
-        return view('admin.customerdetail',['result' => $result,'count' => $count,'result2' => $result2,'ref' => $reference]);
+        return view('admin.customerdetail',['result' => $result,'count' => $count,'result2' => $result2,'result3' => $result3,'ref' => $reference]);
     }
 
     /**
