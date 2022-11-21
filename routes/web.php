@@ -35,7 +35,7 @@ Route::get('/logout', [AdminLoginController::class, 'logout']);
 Route::group(['middleware' => ['checkAdmin']], function () {
     Route::group(['middleware' => ['checkadminRole']], function () {
         Route::get('/dashboard',[DashboardController::class,'index']);
-
+        Route::resource('/setting', SettingController::class);
         
        
 
@@ -48,7 +48,7 @@ Route::group(['middleware' => ['checkAdmin']], function () {
         Route::resource('/sale', TransactionController::class);
         Route::resource('/customer', CardController::class);
         Route::resource('/membership', MembershipController::class);
-        Route::resource('/setting', SettingController::class);
+       
         Route::post('/confirm', [SaleController::class, 'confirmData']);
         Route::get('/export',[ExportController::class,'exportData']);
 

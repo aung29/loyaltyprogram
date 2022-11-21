@@ -116,9 +116,8 @@
                                 <li class="nav-item cu"><a href="/customer" class="nav-link cu">Customer</a></li>
                                 <li class="small">report</li>
                                 <li class="nav-item ex"><a href="/export" class="nav-link ex">Export</a></li>
-                                <li class="small">management</li>
-                                {{--  <li class="nav-item me"><a href="/membership" class="nav-link me">Membership</a></li>  --}}
-                                <li class="nav-item se"><a href="/setting" class="nav-link se">Setting</a></li>
+                                                              {{--  <li class="nav-item me"><a href="/membership" class="nav-link me">Membership</a></li>  --}}
+                                {{-- <li class="nav-item se"><a href="/setting" class="nav-link se">Setting</a></li> --}}
                                 {{-- <li class="nav-item se"><a href="/setting" class="nav-link se">Setting</a></li> --}}
                             </ul>
                         </div>
