@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
      
      <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
@@ -48,7 +51,9 @@
             <div class="account">
                 <p class="admin">{{ session('name') }}</p>
                 <a href="/logout">
-                    <i class="fa-solid fa-power-off icons"></i>
+
+                    <ion-icon name="power" class="icons text-light mt-1"></ion-icon>
+                    {{-- <i class="fa-solid fa-power-off icons"></i> --}}
                 </a>
             </div>
 
@@ -94,7 +99,8 @@
             <div class="account">
                 <p class="admin">{{ session('name') }}</p>
                 <a href="/logout">
-                    <i class="fa-solid fa-power-off icons"></i>
+                    <ion-icon name="power" class="icons text-light mt-1"></ion-icon>
+                    {{-- <i class="fa-solid fa-power-off icons"></i> --}}
                 </a>
             </div>
 
@@ -143,7 +149,7 @@
             <div class="account">
                 <p class="admin">{{ session('name') }}</p>
                 <a href="/logout">
-                    <i class="fa-solid fa-power-off icons"></i>
+                    <ion-icon name="power" class="icons text-light mt-1"></ion-icon>
                 </a>
             </div>
 
