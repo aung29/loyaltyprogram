@@ -34,9 +34,9 @@
                                 <img src="{{ url('image/Gekko Logo.jpg') }}" alt="" class="subimages">
                             </div>
 
-                            <div class="sub1">
+                            {{-- <div class="sub1">
                                 <img src="{{ url('image/Bar Boon Coffee.jpg') }}" alt="" class="subimages">
-                            </div>
+                            </div> --}}
 
                             <div class="sub1 mt-3">
                                 <img src="{{ url('image/image 1.png') }}" alt="" class="subimage1 ">
