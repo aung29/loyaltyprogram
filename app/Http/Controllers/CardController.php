@@ -112,8 +112,23 @@ class CardController extends Controller
      */
     public function edit($id)
     {
-     
+      
+        if(session()->has('role')){
+            $shopid =  session('shop');
+        }
+
+        $card = new M_Card();
+        $result = $card->getDataById($id);
+    
+    
+        $trans = new M_Transaction();
+          $result2 =  $trans->showDataByCardId($id);
+        $count  = $trans->getSpecificCount($id);
+            $result3   = $trans->getTotalTransaction($id);
+        $member = new M_Membership_Program();
+        $reference = $member->reference();
         
+       return view('admin.editcustomer',['result' => $result,'count' => $count,'result2' => $result2,'result3' => $result3,'ref' => $reference]);
 
        
     }
@@ -139,5 +154,18 @@ class CardController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function editProfile(Request $request){
+        
+        // $form = $request;
+        // echo $request;
+
+         $cards = new M_Card();
+         $cards->updateCardInfo($request);
+
+        echo "Card Update Successfully";
+        //   return 'Card Update Successfully';
     }
 }

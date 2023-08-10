@@ -94,7 +94,7 @@
                               <tr>
                                 <th>No</th>
                                 <th>User name</th>
-                                <th>Password</th>
+                                {{-- <th>Password</th> --}}
                                 <th>Roles</th>
                                 <th colspan="1" class="text-center">Action</th>
                                 {{--  <th>Active</th>  --}}
@@ -106,7 +106,7 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>{{ $item->username }}</td>
-                                        <td>{{ $item->password }}</td>
+                                        {{-- <td>{{ $item->password }}</td> --}}
                                         
                                         @switch($item->role)
                                             @case("SA")

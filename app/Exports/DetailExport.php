@@ -28,12 +28,12 @@ class DetailExport implements FromCollection,WithHeadings,WithColumnWidths,WithS
     {
         
         $specificData = DB::table('m_transaction')
-        ->join('m-card', 'm_transaction.card_id', '=', 'm-card.id')
-        ->join('m_membership_program','m-card.membership_id','=','m_membership_program.id')
-        ->join('m_ad_shop','m_ad_shop.id','=','m-card.shop_id')
-        ->select('m_transaction.transaction_date','m-card.customer_name','m-card.card_id','m_membership_program.program_name','m_membership_program.note','m_transaction.amount','m_ad_shop.shop_name')
+        ->join('m_card', 'm_transaction.card_id', '=', 'm_card.id')
+        ->join('m_membership_program','m_card.membership_id','=','m_membership_program.id')
+        ->join('m_ad_shop','m_ad_shop.id','=','m_card.shop_id')
+        ->select('m_transaction.transaction_date','m_card.customer_name','m_card.card_id','m_membership_program.program_name','m_membership_program.note','m_transaction.amount','m_ad_shop.shop_name')
         ->where('m_transaction.card_id',$this->id)
-        ->where('m-card.active',1)
+        ->where('m_card.active',1)
         ->where('m_membership_program.active',1)
         ->get();
 

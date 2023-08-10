@@ -48,19 +48,25 @@
                             <th>Customer Details</th>
                             <th>Address</th>
                             <th>Contact</th>
-                            <th><i class="fas fa-edit "></i></th>
+                            <th> 
+                                <i class="fas fa-edit editicon " data-bs-toggle="modal" data-bs-target="#modal">
+                           
+                            </i></th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <td>
                                 <span>
-                                    <p class="name">Name - {{ $result[0]->customer_name }}</p>
-                                    <p class="name">ID - {{ $result[0]->card_id }}</p>
+                                  <p> <span class="name">Name -  </span><input type="text" name="cusname" id="cusname"   class="name border-0"value="{{ $result[0]->customer_name }}"></p>
+                                  {{-- <p> <span class="name">ID -</span><input type="text" name="" id=""  class="name border-0"value="{{ $result[0]->card_id }}"></p>  --}}
+                                    
+                                    {{-- <p class="name">Name - {{ $result[0]->customer_name }}</p> --}}
+                                    <p class="name" >ID - <span id="cusid">{{ $result[0]->card_id }}</span></p>
                                 </span>
                             </td>
-                            <td class="street">{{ $result[0]->address }}</td>
-                            <td class="phone">{{ $result[0]->phone }}</td>
+                            <td class="street"><input type="text"  id="cusadd" name="cusadd" class="detailadd border-0" value="{{$result[0]->address }}"></td>
+                            <td class="phone"><input type="text" name="cusphone" id="cusphone" class="phoneadd border-0" value="{{ $result[0]->phone }}"></td>
                           </tr>
                     </table>
                    
@@ -216,6 +222,31 @@
                       
                 </div>
 
+
+
+                     {{-- start modal --}}
+            <div id="modal" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="col-sm-4 modal-dialog modal-dialog-centered " role="document">
+                <div class="modal-content">
+                    {{-- <div class="modal-header"> --}}
+
+                    <div class="d-flex justify-content-end ">
+                        <button type="button" class="cross" data-bs-dismiss="modal"
+                            aria-label="Close">&times;</button>
+                    </div>
+                    {{-- </div> --}}
+                    {{-- <div class="modal-body"> --}}
+                    <p class="mx-4"> <span><i class="fas fa-check-circle text-success mx-2"></i></span>Are you sure you want to update customer information?</p>
+                    {{-- </div> --}}
+                    <div class="modal-footer">
+                    <a href="">  <button type="button" id="editicon" class="btn btnYes  bg-danger text-light" >Yes</button></a>
+                        <button type="button" class="btn btnNo bg-secondary text-light" data-bs-dismiss="modal">No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- end modal --}}
 
 
                           

@@ -140,6 +140,7 @@
                             <th>Address</th>
                             <th ></th>
                             <th></th>
+                            
                         
                         </thead>
                         <tbody class="confirmdata">
@@ -158,6 +159,7 @@
                                         <td>{{ $item->address }}</td>
                                         <td class="text-center"><a href="{{ route('customer.show', $item->id) }}"><button
                                             class="btn btn-outline-light edit" ><i class="bi bi-arrow-right"></i>Detail</button></a></td>
+                                            
                                          <td class="text-center">  <button  id="{{ $item->id }}" class="btn btn-outline-danger resets" data-bs-toggle="modal" data-bs-target="#modal">
                                             Reset
                                        </button></td>
@@ -196,7 +198,7 @@
                     </div>
                     {{-- </div> --}}
                     {{-- <div class="modal-body"> --}}
-                    <p class="mx-4"> <span><i class="fas fa-check-circle text-success mx-2"></i></span>Are you sure you want to reset this card amount.</p>
+                    <p class="mx-4"> <span><i class="fas fa-check-circle text-success mx-2"></i></span>Are you sure you want to reset this card amount?</p>
                     {{-- </div> --}}
                     <div class="modal-footer">
                         <a href=""> <button type="button" class="btn btnYes  bg-danger text-light">Yes</button></a>

@@ -11,7 +11,7 @@ class M_Card extends Model
 {
     use HasFactory;
 
-    public $table = 'm-card';
+    public $table = 'm_card';
 
 
     public function saveData($request)
@@ -71,12 +71,12 @@ class M_Card extends Model
             $shopid =  session('shop');
         }
 
-        $cudata = DB::table('m-card')
-            ->select(['*'], DB::raw('m-card.id as pid'))
-            ->join('m_membership_program', 'm_membership_program.id', '=', 'm-card.membership_id')
+        $cudata = DB::table('m_card')
+            ->select(['*'], DB::raw('m_card.id as pid'))
+            ->join('m_membership_program', 'm_membership_program.id', '=', 'm_card.membership_id')
             ->where('m_membership_program.active', 1)
-            ->where('m-card.id', $id)
-            ->where('m-card.shop_id', $shopid)
+            ->where('m_card.id', $id)
+            ->where('m_card.shop_id', $shopid)
             ->get();
 
         return $cudata;
@@ -94,10 +94,10 @@ class M_Card extends Model
     {
 
 
-        $cardid = DB::table('m-card')
-            ->select(['m-card.card_id','m-card.customer_name','m-card.address','m-card.phone','m-card.total_amount','m_reset_amount.reset_time','m_reset_amount.reset_amount','m-card.id'], DB::raw('m-card.id as pid'))
-            ->join('m_reset_amount', 'm_reset_amount.card_id', '=', 'm-card.id')
-            ->where('m-card.id', $id)
+        $cardid = DB::table('m_card')
+            ->select(['m_card.card_id','m_card.customer_name','m_card.address','m_card.phone','m_card.total_amount','m_reset_amount.reset_time','m_reset_amount.reset_amount','m_card.id'], DB::raw('m_card.id as pid'))
+            ->join('m_reset_amount', 'm_reset_amount.card_id', '=', 'm_card.id')
+            ->where('m_card.id', $id)
             ->get();
 
         
@@ -107,24 +107,24 @@ class M_Card extends Model
     public function updateAmount($id, $amount)
     {
 
-        M_Card::where('m-card.id', '=', $id)
-            ->where('m-card.active', 1)
-            ->update(['m-card.total_amount' => $amount]);
+        M_Card::where('m_card.id', '=', $id)
+            ->where('m_card.active', 1)
+            ->update(['m_card.total_amount' => $amount]);
     }
 
     public function updateMembership($id, $memberid)
     {
-        M_Card::where('m-card.id', '=', $id)
-            ->where('m-card.active', 1)
-            ->update(['m-card.membership_id' => $memberid]);
+        M_Card::where('m_card.id', '=', $id)
+            ->where('m_card.active', 1)
+            ->update(['m_card.membership_id' => $memberid]);
     }
 
     public function resetAmount($id,$carrierMoney)
     {
 
-        M_Card::where('m-card.id', '=', $id)
-            ->where('m-card.active', 1)
-            ->update(['m-card.total_amount' => $carrierMoney]);
+        M_Card::where('m_card.id', '=', $id)
+            ->where('m_card.active', 1)
+            ->update(['m_card.total_amount' => $carrierMoney]);
     }
 
     public function getDataByCardName($name)
@@ -138,7 +138,7 @@ class M_Card extends Model
             DB::raw("SELECT
              mc.id,mc.card_id,mc.customer_name,mc.total_amount,member.program_name,member.discount 
         FROM
-            `m-card` as mc
+            `m_card` as mc
         INNER JOIN 
         `m_membership_program` as member
         ON 
@@ -161,7 +161,7 @@ class M_Card extends Model
             DB::raw("SELECT
              mc.id,mc.card_id,mc.customer_name,mc.total_amount,member.program_name,member.discount 
         FROM
-            `m-card` as mc
+            `m_card` as mc
         INNER JOIN 
         `m_membership_program` as member
         ON 
@@ -180,15 +180,17 @@ class M_Card extends Model
 
         if (session()->has('role')) {
             if (session('role') == 'SA') {
-                $culist = DB::table('m-card')
+                $culist = DB::table('m_card')
                     ->select('*')
-                    ->where('m-card.active', 1)
+                    ->where('m_card.active', 1)
+                    ->orderBy('m_card.card_id')
                     ->paginate(10);
             } else {
-                $culist = DB::table('m-card')
+                $culist = DB::table('m_card')
                 ->select('*')
-                ->where('m-card.active', 1)
-                ->where('m-card.shop_id',$shopid)
+                ->where('m_card.active', 1)
+                ->orderBy('m_card.card_id')
+                ->where('m_card.shop_id',$shopid)
                 ->paginate(10);
             }
         }
@@ -208,14 +210,14 @@ class M_Card extends Model
 
         if (session()->has('role')) {
             if (session('role') == 'SA') {
-                $count = DB::table('m-card')
-                    ->where('m-card.active', 1)
+                $count = DB::table('m_card')
+                    ->where('m_card.active', 1)
                     ->get();
                 
             } else {
-                $count = DB::table('m-card')
-                    ->where('m-card.active', 1)
-                    ->where('m-card.shop_id', $shopid)
+                $count = DB::table('m_card')
+                    ->where('m_card.active', 1)
+                    ->where('m_card.shop_id', $shopid)
                     ->get();
                
             }
@@ -228,8 +230,8 @@ class M_Card extends Model
     {
 
 
-        $hasCard = M_Card::where('m-card.card_id', '=', $name)
-            ->where('m-card.active', 1)
+        $hasCard = M_Card::where('m_card.card_id', '=', $name)
+            ->where('m_card.active', 1)
             ->first();
         return $hasCard;
     }
@@ -241,16 +243,18 @@ class M_Card extends Model
         if (session()->has('role')) {
             if (session('role') == 'SA') {
 
-                $result = DB::table('m-card')
-                ->where('m-card.card_id', 'Like', '%' . $request . '%')
-                ->where('m-card.active', 1)
+                $result = DB::table('m_card')
+                ->where('m_card.card_id', 'Like', '%' . $request . '%')
+                ->where('m_card.active', 1)
+                ->orderBy('m_card.card_id')
                 ->get();
     
             }else{
-                $result = DB::table('m-card')
-                ->where('m-card.card_id', 'Like', '%' . $request . '%')
-                ->where('m-card.active', 1)
-                ->where('m-card.shop_id', $shopid)
+                $result = DB::table('m_card')
+                ->where('m_card.card_id', 'Like', '%' . $request . '%')
+                ->where('m_card.active', 1)
+                ->where('m_card.shop_id', $shopid)
+                ->orderBy('m_card.card_id')
                 ->get();
     
             
@@ -270,18 +274,18 @@ class M_Card extends Model
 
         if (session()->has('role')) {
             if (session('role') == 'SA') {
-                $result = DB::table('m-card')
-                ->where('m-card.id', $request)
-                ->where('m-card.active', 1)
+                $result = DB::table('m_card')
+                ->where('m_card.id', $request)
+                ->where('m_card.active', 1)
                
                 ->get();
     
     
             }else{
-                $result = DB::table('m-card')
-                ->where('m-card.id', $request)
-                ->where('m-card.active', 1)
-                ->where('m-card.shop_id', $shopid)
+                $result = DB::table('m_card')
+                ->where('m_card.id', $request)
+                ->where('m_card.active', 1)
+                ->where('m_card.shop_id', $shopid)
                 ->get();
     
             }
@@ -299,15 +303,15 @@ class M_Card extends Model
 
         if (session()->has('role')) {
             if (session('role') == 'SA') {
-                $result = DB::table('m-card')
-                ->where('m-card.membership_id', $request)
-                ->where('m-card.active', 1)
+                $result = DB::table('m_card')
+                ->where('m_card.membership_id', $request)
+                ->where('m_card.active', 1)
                 ->get();
             }else{
-                $result = DB::table('m-card')
-                ->where('m-card.membership_id', $request)
-                ->where('m-card.active', 1)
-                ->where('m-card.shop_id', $shopid)
+                $result = DB::table('m_card')
+                ->where('m_card.membership_id', $request)
+                ->where('m_card.active', 1)
+                ->where('m_card.shop_id', $shopid)
                 ->get();
             }
         }
@@ -328,7 +332,7 @@ class M_Card extends Model
 
         $result  = DB::select(
             DB::raw("SELECT SUM(mc.total_amount) as total,COUNT(mc.card_id) as counts,member.program_name
-     FROM `m-card` as mc
+     FROM `m_card` as mc
      INNER JOIN m_membership_program  as member
      ON  mc.membership_id = member.id
      WHERE mc.active = 1 
@@ -346,7 +350,7 @@ class M_Card extends Model
 
         $result = DB::select(
             DB::raw(" SELECT SUM(mc.total_amount) as total
-          FROM `m-card` as mc
+          FROM `m_card` as mc
          INNER JOIN m_membership_program  as member
          ON  mc.membership_id = member.id
          WHERE mc.active = 1 ")
@@ -366,7 +370,7 @@ class M_Card extends Model
             $result = DB::select(
                 DB::raw(
                     "SELECT SUM(mc.total_amount) as total,COUNT(mc.card_id) as counts,member.program_name, shop.shop_name
-                FROM `m-card` as mc
+                FROM `m_card` as mc
                 INNER JOIN m_membership_program  as member
                 ON  mc.membership_id = member.id
                 INNER JOIN m_ad_shop as shop
@@ -392,7 +396,7 @@ class M_Card extends Model
         //     if (session('role') == 'SA') {
         //         $result = DB::select(
         //             DB::raw("SELECT COUNT(mc.id) as qty,mc.gender
-        //                         FROM `m-card` as mc
+        //                         FROM `m_card` as mc
         //                         JOIN m_membership_program AS member 
         //                         ON  mc.membership_id = member.id
         //                         WHERE mc.active = 1 AND mc.shop_id = 2 
@@ -403,7 +407,7 @@ class M_Card extends Model
         //     }else{
         //         $result = DB::select(
         //             DB::raw("SELECT COUNT(mc.id) as qty,mc.gender
-        //                         FROM `m-card` as mc
+        //                         FROM `m_card` as mc
         //                         JOIN m_membership_program AS member 
         //                         ON  mc.membership_id = member.id
         //                         WHERE mc.active = 1 AND mc.shop_id = $shopid 
@@ -414,7 +418,7 @@ class M_Card extends Model
         //     }
         $result = DB::select(
             DB::raw("SELECT COUNT(mc.id) as qty,mc.gender
-                        FROM `m-card` as mc
+                        FROM `m_card` as mc
                         JOIN m_membership_program AS member 
                         ON  mc.membership_id = member.id
                         WHERE mc.active = 1 AND mc.shop_id = $shopid
@@ -434,7 +438,7 @@ class M_Card extends Model
 
         $result = DB::select(
             DB::raw("SELECT COUNT(mc.id) as qty,mc.gender
-                        FROM `m-card` as mc
+                        FROM `m_card` as mc
                         JOIN m_membership_program AS member 
                         ON  mc.membership_id = member.id
                         WHERE mc.active = 1 AND mc.shop_id = $shopid 
@@ -445,6 +449,40 @@ class M_Card extends Model
         
         return $result;
     }
+
+
+    public function updateCardInfo($request) {
+        
+      
+
+
+        DB::table('m_card')
+        ->select(['*'], DB::raw('m_card'))
+        ->where('m_card.card_id',$request->input('cardid'))
+        ->update(['m_card.customer_name' => $request->input('name'),'m_card.phone' => $request->input('phone'),'m_card.address' => $request->input('address')]);
+        
+  
+
+        
+        // return $request->input('name');
+        // $result = DB::select(
+        //     DB::raw("UPDATE `m_card` SET `customer_name`= $request->input('name'),`phone`= $request->input('phone'),`address`=$request->input('address') WHERE card_id = $request->input('cardid')")
+        // );
+        // dd($result);
+        // $card->card_id = $request->input('card');
+        // $card->customer_name = $request->input('name');
+        // $card->phone =  $request->input('phone');
+        // $card->dob = $request->input('dob');
+        // $card->address = $request->input('address');
+        // $card->gender = $request->input('gender');
+        // $card->total_amount =  0;
+        // $card->membership_id = $mid->id;
+        // $card->shop_id = 2;
+        // $card->active = 1;
+        // $card->save();
+        
+        
+    }
     public function membershipCount($shopid)
     {
 
@@ -453,7 +491,7 @@ class M_Card extends Model
                 $result = DB::select(
                     DB::raw(
                         "SELECT SUM(mc.total_amount) as total,COUNT(mc.card_id) as counts,member.program_name as pgname
-                    FROM `m-card` as mc
+                    FROM `m_card` as mc
                     INNER JOIN m_membership_program  as member
                     ON  mc.membership_id = member.id
                     INNER JOIN m_ad_shop as shop
@@ -467,7 +505,7 @@ class M_Card extends Model
                 $result = DB::select(
                     DB::raw(
                         "SELECT SUM(mc.total_amount) as total,COUNT(mc.card_id) as counts,member.program_name as pgname
-                    FROM `m-card` as mc
+                    FROM `m_card` as mc
                     INNER JOIN m_membership_program  as member
                     ON  mc.membership_id = member.id
                     INNER JOIN m_ad_shop as shop
@@ -502,7 +540,7 @@ class M_Card extends Model
         $result = DB::select(
             DB::raw(
                 "SELECT mc.total_amount,mc.card_id,mc.dob,mc.customer_name,mc.phone,mc.address
-            FROM `m-card` as mc
+            FROM `m_card` as mc
           
             WHERE mc.active = 1 AND mc.shop_id = $shopid AND mc.total_amount > 0
             ORDER BY mc.total_amount DESC

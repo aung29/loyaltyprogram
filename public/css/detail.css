@@ -33,11 +33,24 @@ body{
     font-size: 1rem;
     color: var(--text-color3);
     font-weight: 500;
+    
+    /* border: none; */
     /* white-space: nowrap; */
 }
 
 .cusNam{
     width: 200px;
+}
+.detailadd,.phoneadd{
+    width: 22vw;
+    font-size: 1rem;
+    color: var(--text-color3);
+    font-weight: 500;
+
+}
+input:active,input:focus{
+        outline: none;
+        border-color: none;
 }
 
 .amount{
@@ -250,9 +263,28 @@ th{
 }
 
 
+.editicon{
+    cursor: pointer;
+}
+
+
+
+.cross {
+    width: 5%;
+    height: 5%;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    background: transparent;
+    border: none;
+}
 @media only screen and (max-width: 768px){
 
-
+     table {
+        width: 100vw;
+     }
+    .detailadd{
+        width: 33vw;
+    }
 
     .totals{
         margin-left: 2rem;

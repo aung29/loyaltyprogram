@@ -41,9 +41,9 @@ class M_Reset_Amount extends Model
     public function resetData($id,$amount,$count){
 
 
-      // M_Card::where('m-card.id', '=', $id)
-      // ->where('m-card.active',1)
-      // ->update(['m-card.total_amount' => 0]);
+      // M_Card::where('m_card.id', '=', $id)
+      // ->where('m_card.active',1)
+      // ->update(['m_card.total_amount' => 0]);
 
 
        DB::table('m_reset_amount')

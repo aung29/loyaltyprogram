@@ -47,10 +47,12 @@ Route::group(['middleware' => ['checkAdmin']], function () {
         
         Route::resource('/sale', TransactionController::class);
         Route::resource('/customer', CardController::class);
+        Route::post('/editform',[CardController::class,'editProfile']);
         Route::resource('/membership', MembershipController::class);
        
         Route::post('/confirm', [SaleController::class, 'confirmData']);
         Route::get('/export',[ExportController::class,'exportData']);
+        
 
         Route::get('/excel-export1',[ExportController::class,'cardExport']);
         Route::get('/excel-export2',[ExportController::class,'saleExport']);
